@@ -1,0 +1,85 @@
+{% extends 'admin/base.html.twig' %}
+{% block nav %}
+    {% include 'admin/include/navbar.html.twig' %}
+{% endblock %}
+{% block sidebar %}
+    {% include 'admin/include/sidebar.html.twig' %}
+{% endblock %}
+
+
+
+{% block body %}
+    <div class="content-page">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h4 class="card-title">List Commentaire</h4>
+                            </div>
+
+                        </div>
+                        <div class="card-body">
+                            <div class="collapse" id="datatable-1">
+                                <div class="card"><kbd class="bg-dark"><pre id="bootstrap-datatables" class="text-white"><code>
+
+                                </code></pre></kbd></div>
+                            </div>
+                            <div class="table-responsive">
+                                <table id="datatable" class="table data-table table-striped table-bordered" >
+                                    <thead>
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Nom</th>
+                                        <th>Mail</th>
+                                        <th>Subject</th>
+                                        <th>Mobile</th>
+                                        <th>Commentaire</th>
+                                        <th>Date</th>
+                                        <th>Rate</th>
+                                        <th>actions</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for commentaire in commentaires %}
+                                    <tr>
+                                        <td>{{ commentaire.user }}</td>
+                                        <td>{{ commentaire.nom }}</td>
+                                        <td>{{ commentaire.mail }}</td>
+                                        <td>{{ commentaire.subject }}</td>
+                                        <td>{{ commentaire.mobile }}</td>
+                                        <td>{{ commentaire.commentaire }}</td>
+                                        <td>{{ commentaire.date ? commentaire.date|date('Y-m-d') : '' }}</td>
+                                        <td>{{ commentaire.rate }}</td>
+
+                                        <td>
+                                            <a class="btn btn-success" href="{{ path('commentaire_show_backend', {'id': commentaire.id}) }}">show</a>
+                                            <a class="btn btn-success " disabled=" href="{{ path('commentaire_edit_backend', {'id': commentaire.id}) }}"">edit</a>
+                                        </td>
+
+                                    </tr>
+                                    {% else %}
+                                    <tr>
+                                        <td colspan="6">no records found</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+
+                                </form>
+                                </td>
+                                </tr>
+                                {% endfor %}
+
+
+                                </table>
+                                <center> <a  class="btn btn-success " disabled="href="{{ path('commentaire_new_backend') }}"">Create new</a></center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

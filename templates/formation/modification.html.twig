@@ -1,0 +1,159 @@
+{% extends 'base.html.twig' %}
+      {% block nav %}
+
+          {% include 'Inc/nav2.html.twig' %}
+
+      {% endblock %}
+
+
+{% block body %}
+
+    <div class="clearfix"></div>
+
+    <!-- Header Title Start -->
+    <section class="inner-header-title blank">
+        <div class="container">
+            <h1>Modify Formation</h1>
+        </div>
+    </section>
+    <div class="clearfix"></div>
+    <!-- Title Header End -->
+
+    <!-- Accordion Design Start -->
+    <section class="accordion">
+    <div class="container">
+    <div class="row">
+
+    <!-- Billing Address -->
+    <div class="col-md-12 col-sm-12">
+        <div class="sidebar-wrapper">
+            {{ form_start(form,{'attr':{'novalidate':'novalidate'}}) }}
+
+            <div class="row">
+                <div class="col-xs-6">
+                    {{ form_row(form.nom, {"attr" : {'class':'form-control'},"label":"Nom Formation"})}}
+                </div>
+                <div class="col-xs-6">
+                    {{ form_row(form.prix, {"attr" : {'class':'form-control'},"label":"Prix Formation"})}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    {{ form_row(form.secteur, {"attr" : {'class':'form-control'},"label":"Secteur Formation"})}}
+                </div>
+                <div class="col-xs-6">
+                    {{ form_row(form.idcategorie, {"attr" : {'class':'form-control'} ,"label":"Categorie Formation"})}}
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    {{ form_row(form.description, {"attr" : {'class':'form-control'},"label":"Description Formation"})}}
+                </div>
+                <div class="col-xs-6">
+                    {{ form_row(form.image, {"attr" : {'class':'form-control'} ,"label":"Image Formation"})}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {{ form_row(form.date, {"attr" :{"label":"Date Formation"}})}}
+
+                </div>
+                <div class="col-md-6">
+                    {{ form_row(form.datefin, {"attr" :{"label":"Date Formation"}})}}
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-success btn-primary small-btn">Submit your formation</button>
+                </div>
+            </div>
+
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+
+    <!-- Payment Detail -->
+
+    <!-- Accordion Design End -->
+    <!-- full detail SetionStart-->
+    <section class="full-detail">
+        <div class="container">
+            <div class="row bottom-mrg extra-mrg">
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Sign Up Window Code -->
+    <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="tab" role="tabpanel">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#login" role="tab" data-toggle="tab">Sign In</a></li>
+                            <li role="presentation"><a href="#register" role="tab" data-toggle="tab">Sign Up</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content" id="myModalLabel2">
+                            <div role="tabpanel" class="tab-pane fade in active" id="login">
+                                <img src="assets/img/logo.png" class="img-responsive" alt="" />
+                                <div class="subscribe wow fadeInUp">
+                                    <form class="form-inline" method="post">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <input type="email"  name="email" class="form-control" placeholder="Username" required="">
+                                                <input type="password" name="password" class="form-control"  placeholder="Password" required="">
+                                                <div class="center">
+                                                    <button type="submit" id="login-btn" class="submit-btn"> Login </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane fade" id="register">
+                                <img src="assets/img/logo.png" class="img-responsive" alt="" />
+                                <form class="form-inline" method="post">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <input type="text"  name="email" class="form-control" placeholder="Your Name" required="">
+                                            <input type="email"  name="email" class="form-control" placeholder="Your Email" required="">
+                                            <input type="email"  name="email" class="form-control" placeholder="Username" required="">
+                                            <input type="password" name="password" class="form-control"  placeholder="Password" required="">
+                                            <div class="center">
+                                                <button type="submit" id="subscribe" class="submit-btn"> Modify Formation </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Sign Up Window -->
+
+
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+      {% block nav %}
+
+          {% include 'Inc/nav2.html.twig' %}
+
+      {% endblock %}
+
+
+{% block body %}
+    <div class="clearfix"></div>
+    <section class="inner-header-title" style="background-image:url(assets/img/banner-10.jpg);">
+        <div class="container">
+            <h1>Edit Profil</h1>
+        </div>
+    </section>
+    <div >
+        <div class="container">
+            <h3>Edit Profile</h3>
+            <div class="edit-pro">
+                {{ form_start(form) }}
+                <div class="col-md-4 col-sm-6">
+
+                    {{ form_row(form.nom)}}
+
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    {{ form_row(form.prenom) }}
+
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    {{ form_row(form.birthday) }}
+
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    {{ form_row(form.email) }}
+
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    {{ form_row(form.tel) }}
+
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    {{ form_row(form.codePostal) }}
+
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    {{ form_row(form.adresse) }}
+
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    {{ form_row(form.gouvernorat) }}
+
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    {{ form_row(form.pays) }}
+
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    {{ form_row(form.password) }}
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                        {{ form_row(form.about_you) }}
+                </div>
+                        <div class="col-md-4 col-sm-6">
+                            {{ form_row(form.profilePic) }}
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            {{ form_row(form.cv) }}
+                        </div>
+
+                <div class="col-sm-12">
+                    <button type="submit" class="update-btn">Update Now</button>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+      {% block nav %}
+
+          {% include 'Inc/nav2.html.twig' %}
+
+      {% endblock %}
+
+
+{% block body %}
+    <div class="clearfix"></div>
+
+    <!-- Header Title Start -->
+    <section class="inner-header-title blank">
+        <div class="container">
+            <h1>Create Job</h1>
+        </div>
+    </section>
+    <div class="clearfix"></div>
+    <!-- Header Title End -->
+
+    <!-- General Detail Start -->
+    <div class="detail-desc section">
+    <div class="container white-shadow">
+
+        <div class="row">
+            <div class="detail-pic js">
+                <div class="box">
+                    <input type="file" name="upload-pic[]" id="upload-pic" class="inputfile" />
+                    <label for="upload-pic"><i class="fa fa-upload" aria-hidden="true"></i><span></span></label>
+                </div>
+            </div>
+        </div>
+        {{ form_start(form,{'attr':{'novalidate':'novalidate'}}) }}
+        <div class="row">
+            <div class="form-group col-md-6">
+                {{ form_row(form.nom, {"attr" : {'class':'form-control'},"label":"Nom Offre"})}}
+            </div>
+            <div class="form-group col-md-6">
+                {{ form_row(form.logo, {"attr" : {'class':'form-control'},"label":"Image Offre"})}}
+            </div>
+            <div class="form-group col-md-6">
+                {{ form_row(form.email, {"attr" : {'class':'form-control'},"label":"Email Offre"})}}
+            </div>
+            <div class="form-group col-md-6">
+                {{ form_row(form.title, {"attr" : {'class':'form-control'},"label":"Title Offre"})}}
+            </div>
+            <div class="form-group col-md-6">
+                {{ form_row(form.description, {"attr" : {'class':'form-control'},"label":"Description Offre"})}}
+            </div>
+            <div class="form-group col-md-6">
+                {{ form_row(form.idcategorie, {"attr" : {'class':'form-control'},"label":"Idcategorie Offre"})}}
+            </div>
+
+        </div>
+        <hr>
+        <div class="row">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add New Offre</button>
+        {{ form_end(form) }}
+
+
+    </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+      {% block nav %}
+
+          {% include 'Inc/nav2.html.twig' %}
+
+      {% endblock %}
+
+
+{% block body %}
+    <div class="clearfix"></div>
+    <section class="inner-header-title" style="background-image:url(assets/img/banner-10.jpg);">
+        <div class="container">
+            <h1>Your Claims</h1>
+        </div>
+    </section>
+    <div class="content-page">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h2 class="card-title">Claims List</h2>
+                            </div>
+
+                        </div>
+                        <div class="card-body">
+                            <div class="collapse" id="datatable-1">
+                                <div class="card"><kbd class="bg-dark"><pre id="bootstrap-datatables" class="text-white"><code>
+
+                                </code></pre></kbd></div>
+                            </div>
+                            <div class="table-responsive">
+                                <table id="datatable" class="table data-table table-striped table-bordered" >
+                                    <thead>
+                                    <tr>
+                                        <th>Reference</th>
+                                        <th>Subbmited at</th>
+                                        <th>Subject</th>
+                                        <th>Message</th>
+                                        <th>Status</th>
+                                        <th>Cancel Claim</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for user in users %}
+                                    <tr>
+                                        <td>{{ user.id }}</td>
+                                        <td>{{ user.SubmitDate }}</td>
+                                        <td>{{ user.subject }}</td>
+                                        <td>{{ user.claim|nl2br }}</td>
+                                        <td>
+                                            {% if user.Cstatus==0 %}
+                                               Recieved <br>
+                                                Currently Under investigation...
+                                                {% else %}
+                                                Solved.
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            <a href="{{ path('DeleteRec',{'i':user.id}) }}" class="btn btn-success" >Cancel</a>
+                                        </td>
+
+                                    </tr>
+                                    {% else %}
+                                    <tr>
+                                        <td colspan="6">no records found</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+
+                                </form>
+                                </td>
+                                </tr>
+                                {% endfor %}
+
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

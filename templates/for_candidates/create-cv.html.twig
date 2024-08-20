@@ -1,0 +1,127 @@
+{% extends 'base.html.twig' %}
+      {% block nav %}
+
+          {% include 'Inc/nav2.html.twig' %}
+
+      {% endblock %}
+
+
+{% block body %}
+    <div class="clearfix"></div>
+
+    <!-- Header Title Start -->
+    <section class="inner-header-title blank">
+        <div class="container">
+            <h1>Create Resume</h1>
+        </div>
+    </section>
+    <div class="clearfix"></div>
+    <!-- Header Title End -->
+
+
+
+    <!-- full detail SetionStart-->
+    <section class="full-detail">
+        <div class="container">
+            <form action="{{ path('cv',{'id':app.user.username}) }}" method="get">
+            <div class="row bottom-mrg extra-mrg">
+
+                    <h2 class="detail-title">General Information</h2>
+
+
+                    <div class="col-md-6 col-sm-6">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-globe"></i></span>
+                            <input type="text" class="form-control" placeholder="Marital Status" name="Martial">
+                        </div>
+                    </div>
+
+                <div class="col-md-6 col-sm-6">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-globe"></i></span>
+                        <input type="text" class="form-control" placeholder="Military Status" name="Military">
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-globe"></i></span>
+                        <input type="text" class="form-control" placeholder="Interests" name="interests">
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+            <div class="row bottom-mrg extra-mrg">
+
+                <h2 class="detail-title">Education</h2>
+                <div class="col-md-12 col-sm-12">
+                    <textarea class="form-control " name="Education" style="margin: 0px -12px 10px 0px; height: 247px; width: 1223px;"
+                    placeholder="Date : Details
+Date2 : Details..."></textarea>
+
+                </div>
+
+
+            </div>
+
+            <div class="row bottom-mrg extra-mrg">
+
+                <h2 class="detail-title">Skills</h2>
+                <div class="col-md-12 col-sm-12">
+                    <textarea class="form-control " name="skills" style="margin: 0px -12px 10px 0px; height: 247px; width: 1223px;" placeholder="Skill : Details
+Skill2 : Details..."></textarea>
+                </div>
+
+
+            </div>
+
+            <div class="row bottom-mrg extra-mrg">
+
+                <h2 class="detail-title">Work Experience</h2>
+                <div class="col-md-12 col-sm-12">
+                    <textarea class="form-control" name="experience" style="margin: 0px -12px 10px 0px; height: 247px; width: 1223px;" placeholder="Establishment : Details
+Establishment2 : Details..."></textarea>
+
+                </div>
+
+
+            </div>
+            <div class="row bottom-mrg extra-mrg">
+
+                    <h2 class="detail-title">Personal Projects</h2>
+                    <div class="col-md-12 col-sm-12">
+                        <textarea class="form-control" name="projects" style="margin: 0px -12px 10px 0px; height: 247px; width: 1223px;" placeholder="Project : Details
+Project2 : Details..."></textarea>
+
+                    </div>
+
+
+            </div>
+            <div class="row bottom-mrg extra-mrg">
+
+
+
+
+
+            <div class="row bottom-mrg extra-mrg">
+
+                    <div class="col-md-12">
+                        <button  type="submit" class="btn btn-success btn-primary small-btn">Create your Resume</button>
+                    </div>
+            </div>
+            </div>
+            </form>
+            </div>
+        </div>
+
+    </section>
+    <!-- full detail SetionStart-->
+
+
+
+
+
+{% endblock %}

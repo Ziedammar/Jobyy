@@ -1,0 +1,44 @@
+
+
+
+{% block body %}
+
+                                <table id="datatable" class="table data-table table-striped table-bordered" >
+                                    <thead>
+                                    <tr>
+                                        <th>Id User</th>
+                                        <th>Category</th>
+                                        <th>Date</th>
+                                        <th>Contenu</th>
+                                        <th>Titre</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for blog in blogs %}
+                                    <tr>
+                                        <td>{{ blog.user }}</td>
+                                        <td>{{ blog.cat }}</td>
+                                        <td>{{ blog.date ? blog.date|date('Y-m-d') : '' }}</td>
+                                        <td>{{ blog.contenu }}</td>
+                                        <td>{{ blog.titre }}</td>
+
+
+                                    </tr>
+                                    {% else %}
+                                    <tr>
+                                        <td colspan="6">no records found</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+
+                                </form>
+                                </td>
+                                </tr>
+                                {% endfor %}
+
+
+                                </table>
+
+{% endblock %}

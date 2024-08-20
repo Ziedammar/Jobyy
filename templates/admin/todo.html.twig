@@ -1,0 +1,110 @@
+
+{% extends 'admin/base.html.twig' %}
+{% block nav %}
+    {% include 'admin/include/navbar.html.twig' %}
+{% endblock %}
+{% block sidebar %}
+    {% include 'admin/include/sidebar.html.twig' %}
+{% endblock %}
+
+
+{% block body %}
+
+    <div class="content-page">
+     <div class="container-fluid">
+       <div class="row">
+       <div class="col-lg-12">
+    <div class="card card-block card-stretch card-height">
+    <div class="card-header d-flex justify-content-between">
+        <div class="header-title">
+            <h4 class="card-title mb-0">Claims List</h4>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="data-tables table" style="width:100%">
+                <thead class="light">
+                <tr>
+                    <th>Id</th>
+                    <th>User Id</th>
+                    <th>User Email</th>
+                    <th>Subbmited At</th>
+                    <th>Subject</th>
+                    <th>Claim</th>
+                    <th>Answer Claim</th>
+                    <th>Mark as Solved</th>
+                    
+
+                </tr>
+                </thead>
+                {% for claim in claims %}
+                <tbody>
+                <tr>
+
+                    <td>{{ claim.id }}</td>
+                    <td>{{ claim.UserId }}</td>
+                    <td>{{ claim.UserEmail }}</td>
+                    <td>{{ claim.SubmitDate }}</td>
+                    <td>{{ claim.Subject }}</td>
+                    <td>{{ claim.claim }}</td>
+
+                    <form action="{{ path('email_compose',{'id':claim.id}) }}" method="POST">
+                        <td><button class="btn-success">Answer</button></td>
+                    </form>
+                    <form action="{{ path('solved',{'id':claim.id}) }}" method="POST">
+                        <td><button class="btn-success">Solved</button></td>
+                    </form>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+        <div class="card-header d-flex justify-content-between">
+            <div class="header-title">
+                <h4 class="card-title mb-0">Solved Claims List</h4>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="data-tables table" style="width:100%">
+                    <thead class="light">
+                    <tr>
+                        <th>Id</th>
+                        <th>User Id</th>
+                        <th>User Email</th>
+                        <th>Subbmited At</th>
+                        <th>Subject</th>
+                        <th>Claim</th>
+                        <th>Reopen Claim</th>
+                    </tr>
+                    </thead>
+                    {% for claim in claims1 %}
+                        <tbody>
+                        <tr>
+
+                            <td>{{ claim.id }}</td>
+                            <td>{{ claim.UserId }}</td>
+                            <td>{{ claim.UserEmail }}</td>
+                            <td>{{ claim.SubmitDate }}</td>
+                            <td>{{ claim.Subject }}</td>
+                            <td>{{ claim.claim }}</td>
+
+                            <form action="{{ path('reopen',{'id':claim.id}) }}" method="POST">
+                                <td><button class="btn-success">Open</button></td>
+                            </form>
+                        </tbody>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+{% endblock %}

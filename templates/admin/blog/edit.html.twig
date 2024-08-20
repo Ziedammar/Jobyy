@@ -1,0 +1,20 @@
+{% extends 'admin/base.html.twig' %}
+{% block nav %}
+    {% include 'admin/include/navbar.html.twig' %}
+{% endblock %}
+{% block sidebar %}
+    {% include 'admin/include/sidebar.html.twig' %}
+{% endblock %}
+
+
+{% block title %}Edit Blog{% endblock %}
+
+{% block body %}
+    <h1>Edit Blog</h1>
+
+    {{ include('admin/blog/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a class="btn btn-success" href="{{ path('blog_index_backend') }}">back to list</a>
+
+    {{ include('admin/blog/_delete_form.html.twig') }}
+{% endblock %}

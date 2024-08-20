@@ -1,0 +1,112 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{ asset("../../assets/css/cv.css") }}">
+    <link rel="stylesheet" href="{{ asset("../../assets/css/print.css") }}" type="text/css" media="print" />
+
+
+    <!------ Include the above in your HEAD tag ---------->
+</head>
+
+
+{% block body %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-offset-2 col-lg-8">
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <article class="panel-body">
+                        <figure class="text-center">
+                            <img src="../../{{ app.user.profilePic }}" class="img-thumbnail img-circle img-responsive" alt="me">
+                            <figcaption>
+                                <h3>{{ app.user.nom }}</h3> Adresse : {{ app.user.adresse }}
+                                <br> Tel. {{ app.user.tel    }}  <br>  E-mail: {{app.user.email}}
+                            </figcaption>
+                        </figure>
+                    </article>
+                    <br>
+                    <article>
+                        <h4>
+                            <strong>Personal Details</strong>
+                        </h4>
+                        <hr>
+                        <dl class="dl-horizontal">
+                            <dt>Date of Birth:</dt>
+                            <dd>{{ app.user.birthday|date("d/m/Y") }}</dd>
+                            <dt>Age:</dt>
+                            <dd>25</dd>
+                            <dt>Marital Status:</dt>
+                            <dd>{{ cv.martial }}</dd>
+                            <dt>Military Status:</dt>
+                            <dd>{{ cv.military }}</dd>
+                            <dt>Interests:</dt>
+                            <dd>{{ cv.interests }}</dd>
+                        </dl>
+                    </article>
+                    <article>
+                        <h4>
+                            <strong>Edcucation</strong>
+                        </h4>
+                        <hr>
+                        <dl class="dl-horizontal">
+                            <dt>Year and Establishment:</dt>
+                            <dd>{{ cv.education|nl2br }}</dd>
+                        </dl>
+                    </article>
+                    <article>
+                        <h4>
+                            <strong>Skills</strong>
+                        </h4>
+                        <hr>
+                        <dl class="dl-horizontal">
+                            <dt>Area and Skills:</dt>
+                            <dd type="text">{{ cv.skills|nl2br }}</dd>
+                        </dl>
+                    </article>
+                    <article>
+                        <h4>
+                            <strong>Work Experiences</strong>
+                        </h4>
+                        <hr>
+                        <dl class="dl-horizontal">
+
+                            <dt>Year and Establishment:</dt>
+                            <dd> {{ cv.experience|nl2br }}</dd>
+
+                        </dl>
+                        <hr>
+
+                    </article>
+                    <article>
+                        <h4>
+                            <strong>Projects</strong>
+                        </h4>
+                        <hr>
+                        <dl class="dl-horizontal">
+                            <dt>Project and Description: </dt>
+                            <dd> {{ cv.projects|nl2br }}</dd>
+                        </dl>
+                        <hr>
+                    </article>
+                    <h6>Made by Jobby CV builder - 2021  ©</h6>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+    <center><input id="impression" name="impression" type="button" class="btn-success" onclick="imprimer_page()" value="Print / Save Resume" /></center>
+
+    <script type="text/javascript">
+        function imprimer_page(){
+            window.print();
+        }
+    </script>
+
+
+{% endblock %}

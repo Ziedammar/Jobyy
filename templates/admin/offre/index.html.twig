@@ -1,0 +1,98 @@
+{% extends 'admin/base.html.twig' %}
+{% block nav %}
+    {% include 'admin/include/navbar.html.twig' %}
+{% endblock %}
+{% block sidebar %}
+    {% include 'admin/include/sidebar.html.twig' %}
+
+{% endblock %}
+
+
+{% block body %}
+    {% for message in app.flashes('success')%}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+
+    {% endfor%}
+
+
+
+    <div class="content-page">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h4 class="card-title">Liste des Offres</h4>
+                            </div>
+
+                        </div>
+                        <div class="card-body">
+                            <div class="collapse" id="datatable-1">
+                                <div class="card"><kbd class="bg-dark"><pre id="bootstrap-datatables" class="text-white"><code>
+
+                                </code></pre></kbd></div>
+                            </div>
+                            <form class="navbar-form" method="post" action="{{ path('offre_index') }}">
+                                {{ form_start(searchForm) }}
+                                <div class="input-group no-border">
+                                    {{ form_widget(searchForm.nom) }}
+                                    <button class="btn btn-default btn-round btn-just-icon">
+                                        {{ button_label|default('search') }}
+                                    </button>
+                                </div>
+
+                            </form>
+                            {{ form_end(searchForm) }}
+                            <a class="btn btn-success" href="{{ path('listpdf') }}">Create pdf</a>
+                            <div class="table-responsive">
+                                <table id="datatable" class="table data-table table-striped table-bordered" >
+                                    <thead>
+                                    <tr>
+                                        <th>Nom </th>
+                                        <th>Title</th>
+                                        <th>Logo</th>
+                                        <th>Email</th>
+                                        <th>description</th>
+                                        <th>Categorie</th>
+                                        <th>Action</th>
+
+                                    </tr>
+                                    </thead>
+                                    {% set value = 0 %}
+                                    {% for offre in offres %}
+                                        {% set value = value+1 %}
+                                        <tr>
+                                            <td>{{ offre.nom }}</td>
+                                            <td>{{ offre.title }}</td>
+
+                                            <td><img src="{{ asset('/uploads/' ~ offre.logo) }}"width="130" height="130"></td>
+                                            <td>{{ offre.email }}</td>
+                                            <td>{{ offre.description }}</td>
+                                            <td>{{ offre.idcategorie.nom }}</td>
+                                            <td>
+                                                <a href="{{ path('offre_delete',{'id':offre.id}) }}" > <button class="btn-dark" >Delete</button></a>
+                                                <a href="{{ path('offre_edit', {'id': offre.id}) }}"> <button class="btn-danger">edit</button> </a>
+
+                                            </td>
+
+                                        </tr>
+
+                                    {% endfor %}
+                                    <p class="text-danger"><strong><u>Il y a {{ value }} offres </u></strong></p>
+
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

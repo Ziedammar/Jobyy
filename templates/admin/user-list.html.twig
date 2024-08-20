@@ -1,0 +1,253 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block nav %}
+    {% include 'admin/include/navbar.html.twig' %}
+{% endblock %}
+{% block sidebar %}
+
+    {% include 'admin/include/sidebar.html.twig' %}
+{% endblock %}
+
+
+{% block body %}
+
+
+
+
+
+
+
+
+
+
+    <div class="content-page">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card card-block card-stretch card-height">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h4 class="card-title mb-0">Candidates List</h4>
+                            </div>
+                            <a href="{{ path('addC-admin') }}" class="btn btn-primary" >Add New</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="collapse" id="datatable-1">
+                                <div class="card"><kbd class="bg-dark"><pre id="bootstrap-datatables" class="text-white"><code>
+
+                                </code></pre></kbd></div>
+                            </div>
+                            <div class="table-responsive">
+                                <table id="datatable" class="table data-table table-striped ">²
+                                    <thead>
+                                    <tr>
+                                        <th>Picture</th>
+                                        <th>Name</th>
+                                        <th>Surname</th>
+                                        <th>Email</th>
+                                        <th>Phone No</th>
+                                        <th>Birthday</th>
+                                        <th>Country</th>
+                                        <th>About</th>
+                                        <th>Account Status</th>
+                                        <th>Ban Account</th>
+
+                                    </tr>
+                                    </thead>
+                                    {% for candidate in candidates %}
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="{{ candidate.profilePic }}" class="rounded avatar-40 img-fluid" alt="">
+                                        </td>
+                                        <td>{{ candidate.nom }}</td>
+                                        <td>{{ candidate.prenom }}</td>
+                                        <td>{{ candidate.email }}</td>
+                                        <td>{{ candidate.tel }}</td>
+                                        <td>
+                                            {{ candidate.birthday|date("d/m/Y") }}
+
+                                        </td>
+                                        <td>{{ candidate.pays }}</td>
+                                        <td>{{ candidate.AboutYou }}</td>
+                                        <td>
+                                            {% if candidate.status==0 %}
+                                                Active
+                                            {% endif %}
+
+                                        </td>
+                                        <form action="{{ path('banC',{'i': candidate.username}) }}" method="POST">
+                                        <td><button class="btn-outline-warning">Ban</button></td>
+                                        </form>
+
+                                    </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h4 class="card-title mb-0">Entreprises List</h4>
+                            </div>
+                            <a href="{{ path('addE-admin') }}" class="btn btn-primary" >Add New</a>
+
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="data-tables table" style="width:100%">
+                                    <thead class="light">
+                                    <tr>
+                                        <th>Picture</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone No</th>
+                                        <th>Address</th>
+                                        <th>Website</th>
+                                        <th>About</th>
+                                        <th>Account Status</th>
+                                        <th>Ban Account</th>
+
+                                    </tr>
+                                    </thead>
+                                    {% for entreprise in entreprises %}
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="{{ entreprise.profilPic }}" class="rounded avatar-40 img-fluid" alt="">
+                                        </td>
+                                        <td>{{ entreprise.nom }}</td>
+                                        <td>{{ entreprise.email }}</td>
+                                        <td>{{ entreprise.tel }}</td>
+                                        <td>
+                                            {{ entreprise.adresse }}
+
+                                        </td>
+                                        <td>{{ entreprise.siteweb }}</td>
+                                        <td>{{ entreprise.About }}</td>
+                                        <td>
+                                            {% if entreprise.status==0 %}
+                                            Active
+                                            {% endif %}
+
+                                        </td>
+
+                                        <form action="{{ path('ban',{'i': entreprise.username}) }}" method="POST">
+                                            <td><button class="btn-outline-warning" type="submit">Ban</button></td>
+                                        </form>
+
+
+
+                                    </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h4 class="card-title mb-0">Banned Candidates List</h4>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="data-tables table" style="width:100%">
+                                    <thead class="light">
+                                    <tr>
+                                        <th>Picture</th>
+                                        <th>Email</th>
+                                        <th>Phone No</th>
+                                        <th>Account Type</th>
+                                        <th>Unban Account </th>
+                                    </tr>
+                                    </thead>
+                                    {% for ban in bans1 %}
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="{{ ban.profilePic }}" class="rounded avatar-40 img-fluid" alt="">
+                                        </td>
+                                        <td>{{ ban.email }}</td>
+                                        <td>{{ ban.tel }}</td>
+                                         <td>   {% if ban.type==0 %}
+                                                Candidate
+                                            {% else %}
+                                                Entreprise
+                                            {% endif %}
+
+                                        </td>
+
+                                        <form action="{{ path('unbanC',{'i': ban.username}) }}" method="POST">
+                                            <td><button class="btn-success" type="submit">Unban</button></td>
+                                        </form>
+
+
+
+
+                                    </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h4 class="card-title mb-0">Banned Entreprises List</h4>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="data-tables table" id="haja" style="width:100%">
+                                    <thead class="light">
+                                    <tr>
+                                        <th>Picture</th>
+                                        <th>Email</th>
+                                        <th>Phone No</th>
+                                        <th>Account Type</th>
+                                        <th>Unban Account </th>
+
+                                    </tr>
+                                    </thead>
+                                    {% for ban in bans %}
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="{{ ban.profilPic }}" class="rounded avatar-40 img-fluid" alt="">
+                                        </td>
+                                        <td>{{ ban.email }}</td>
+                                        <td>{{ ban.tel }}</td>
+                                        <td>   {% if ban.type==0 %}
+                                                Candidate
+                                            {% else %}
+                                                Entreprise
+                                            {% endif %}
+
+                                        </td>
+
+                                        <form action="{{ path('unban',{'i': ban.username}) }}" method="POST">
+                                            <td><button class="btn-success" type="submit">Unban</button></td>
+                                        </form>
+
+
+
+
+                                    </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}

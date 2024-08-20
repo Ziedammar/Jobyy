@@ -1,0 +1,22 @@
+{% extends 'admin/base.html.twig' %}
+{% block nav %}
+    {% include 'admin/include/navbar.html.twig' %}
+{% endblock %}
+{% block sidebar %}
+    {% include 'admin/include/sidebar.html.twig' %}
+{% endblock %}
+
+
+
+{% block body %}
+<div class="container">
+    <h1>Create new Event</h1>
+
+    {{ include('admin/event/_form.html.twig') }}
+
+        <a href="{{ path('event_index_backend') }}">back to list</a>
+
+
+
+</div>
+{% endblock %}

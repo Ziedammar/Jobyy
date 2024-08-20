@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+      {% block nav %}
+
+		  {% include 'Inc/nav2.html.twig' %}
+
+	  {% endblock %}
+
+
+{% block body %}
+
+	<div class="clearfix"></div>
+
+	<!-- Header Title Start -->
+	<section class="inner-header-title blank">
+		<div class="container">
+			<h1>Create Formation</h1>
+		</div>
+	</section>
+	<div class="clearfix"></div>
+	<!-- Title Header End -->
+
+	<!-- Accordion Design Start -->
+	<section class="accordion">
+		<div class="container">
+			<div class="row">
+
+				<!-- Billing Address -->
+				<div class="col-md-12 col-sm-12">
+					<div class="sidebar-wrapper">
+						{{ form_start(form,{'attr':{'novalidate':'novalidate'}}) }}
+
+							<div class="row">
+								<div class="col-xs-6">
+									{{ form_row(form.nom, {"attr" : {'class':'form-control'},"label":"Nom Formation"})}}
+								</div>
+								<div class="col-xs-6">
+									{{ form_row(form.prix, {"attr" : {'class':'form-control'},"label":"Prix Formation"})}}
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">
+									{{ form_row(form.secteur, {"attr" : {'class':'form-control'},"label":"Secteur Formation"})}}
+								</div>
+								<div class="col-xs-6">
+									{{ form_row(form.idcategorie, {"attr" : {'class':'form-control'} ,"label":"Categorie Formation"})}}
+
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">
+									{{ form_row(form.description, {"attr" : {'class':'form-control'},"label":"Description Formation"})}}
+								</div>
+								<div class="col-xs-6">
+									{{ form_row(form.image, {"attr" : {'class':'form-control'} ,"label":"Image Formation"})}}
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									{{ form_row(form.date, {"attr" :{"label":"Date Formation"}})}}
+
+								</div>
+							<div class="col-md-6">
+								{{ form_row(form.datefin, {"attr" :{"label":"Date Formation"}})}}
+
+							</div>
+						</div>
+
+							<div class="row">
+							<div class="col-md-12">
+								<button type="submit" class="btn btn-success btn-primary small-btn">Submit your formation</button>
+							</div>
+							</div>
+
+						{{ form_end(form) }}
+
+					</div>
+				</div>
+
+				<!-- Payment Detail -->
+
+	<!-- Accordion Design End -->
+	<!-- full detail SetionStart-->
+	<section class="full-detail">
+		<div class="container">
+			<div class="row bottom-mrg extra-mrg">
+
+
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

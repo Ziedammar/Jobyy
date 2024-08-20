@@ -1,0 +1,150 @@
+{% extends 'base.html.twig' %}
+{% block stylesheet %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.min.css" integrity="sha256-uq9PNlMzB+1h01Ij9cx7zeE2OR2pLAfRw3uUUOOPKdA=" crossorigin="anonymous">
+    <style>
+        #calendrier{
+            width: 80%;
+            margin: auto;
+        }
+    </style>
+{% endblock %}
+
+
+      {% block nav %}
+
+		  {% include 'Inc/nav2.html.twig' %}
+
+	  {% endblock %}
+
+
+{% block body %}			<div class="clearfix"></div>
+			
+			<!-- Title Header Start -->
+			<section class="inner-header-title" style="background-image:url(assets/img/banner-10.jpg);">
+				<div class="container">
+					<h1>Calendrier</h1>
+				</div>
+			</section>
+			<div class="clearfix"></div>
+			<!-- Title Header End -->
+			<!-- Browse Company List Start -->
+			<section class="browse-company">
+				<div class="container">
+				
+					<!-- Company Searrch Filter Start -->
+				
+					<!-- Company Searrch Filter End -->
+					
+					<!-- Single Browse Company -->
+               
+					<!-- Single Browse Company -->
+	
+			 <div id="calendrier">
+            </div>
+					
+				
+				
+				
+			
+					
+				</div>
+			</section>
+			<!-- Browse Company List End -->
+			
+
+			<!-- Sign Up Window Code -->
+			<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="tab" role="tabpanel">
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" class="active"><a href="#login" role="tab" data-toggle="tab">Sign In</a></li>
+								<li role="presentation"><a href="#register" role="tab" data-toggle="tab">Sign Up</a></li>
+							</ul>
+							<!-- Tab panes -->
+							<div class="tab-content" id="myModalLabel2">
+								<div role="tabpanel" class="tab-pane fade in active" id="login">
+									<img src="assets/img/logo.png" class="img-responsive" alt="" />
+									<div class="subscribe wow fadeInUp">
+										<form class="form-inline" method="post">
+											<div class="col-sm-12">
+												<div class="form-group">
+													<input type="email"  name="email" class="form-control" placeholder="Username" required="">
+													<input type="password" name="password" class="form-control"  placeholder="Password" required="">
+													<div class="center">
+													<button type="submit" id="login-btn" class="submit-btn"> Login </button>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+
+								<div role="tabpanel" class="tab-pane fade" id="register">
+								<img src="assets/img/logo.png" class="img-responsive" alt="" />
+									<form class="form-inline" method="post">
+											<div class="col-sm-12">
+												<div class="form-group">
+													<input type="text"  name="email" class="form-control" placeholder="Your Name" required="">
+													<input type="email"  name="email" class="form-control" placeholder="Your Email" required="">
+													<input type="email"  name="email" class="form-control" placeholder="Your Email" required="">
+													<input type="email"  name="email" class="form-control" placeholder="Username" required="">
+													<input type="password" name="password" class="form-control"  placeholder="Password" required="">
+													<div class="center">
+													<button type="submit" id="subscribe" class="submit-btn"> Create Account </button>
+													</div>
+												</div>
+											</div>
+										</form>
+								</div>
+							</div>
+							</div>
+						</div>
+						</div>
+				</div>
+			</div>   
+			<!-- End Sign Up Window -->
+
+
+
+
+
+{% endblock %}
+  {% block javascript  %}
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.min.js" integrity="sha256-rPPF6R+AH/Gilj2aC00ZAuB2EKmnEjXlEWx5MkAp7bw=" crossorigin="anonymous"></script>
+
+  <script>
+
+	  window.onload = () => {
+	  let calendarElt = document.querySelector("#calendrier")
+	  let calendar = new FullCalendar.Calendar(calendarElt, {
+	  initialView: 'timeGridWeek',
+	  locale: 'fr',
+	  timeZone: 'Europe/Paris',
+	  headerToolbar: {
+	  start: 'prev,next today',
+	  center: 'title',
+	  end: 'dayGridMonth,timeGridWeek'
+  },
+	  events: {{ data|raw }},
+            editable: true,
+
+
+        })
+        calendar.on('eventChange', (e) => {
+
+        let url = `/api/${e.event.id}/edit`
+        let donnees = {
+                "start": e.event.date_temps,
+            }
+            let xhr = new XMLHttpRequest
+            xhr.open("PUT", url)
+            xhr.send(JSON.stringify(donnees))
+        } )
+
+        calendar.render()
+    }
+   </script>
+ {% endblock %}

@@ -1,0 +1,47 @@
+
+
+{% block body %}
+
+   <h2 >Liste des Formations</h2>
+
+
+
+                                <table  >
+                                    <thead>
+                                    <tr>
+                                        <th>Nom </th>
+
+                                        <th>Prix</th>
+                                        <th>Description</th>
+                                        <th>Secteur</th>
+                                        <th>Date Début</th>
+                                        <th>Date fin</th>
+                                        <th>Categorie </th>
+                                        <th>Nom user</th>
+
+
+                                    </tr>
+                                    </thead>
+                                    {% for formation in formations %}
+                                        <tr>
+                                            <td>{{ formation.nom }}</td>
+                                            <td>{{ formation.prix }}</td>
+
+                                            <td>{{ formation.description }}</td>
+                                            <td>{{ formation.secteur }}</td>
+                                            <td>{{ formation.date|date('Y-m-d') }}</td>
+                                            <td>{{ formation.datefin |date('Y-m-d') }}</td>
+                                            <td>{{ formation.idcategorie.nom }}</td>
+
+
+
+                                        </tr>
+
+
+                                    {% endfor %}
+
+
+                                </table>
+
+
+{% endblock %}

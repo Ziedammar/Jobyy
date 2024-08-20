@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+      {% block nav %}
+
+          {% include 'Inc/nav2.html.twig' %}
+
+      {% endblock %}
+
+
+{% block body %}
+    <div class="clearfix"></div>
+
+    <!-- Title Header Start -->
+    <section class="inner-header-title" style="background-image:url(../assets/img/banner-10.jpg);">
+        <div class="container">
+            <h1>Browse backend</h1>
+        </div>
+    </section>
+    <div class="clearfix"></div>
+    <!-- Title Header End -->
+
+
+
+
+    <section class="browse-company">
+    <div class="container">
+
+
+        <div class="row extra-mrg">
+            <div class="wrap-search-filter">
+                <form>
+                    <div class="col-md-4 col-sm-4">
+                        <input type="text" class="form-control" placeholder="Keyword: Name, Tag">
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <input type="text" class="form-control" placeholder="Location: City, State, Zip">
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <select class="selectpicker form-control" multiple title="All Categories">
+                            <option>Information Technology</option>
+                            <option>Mechanical</option>
+                            <option>Hardware</option>
+                        </select>
+
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                        <button type="submit" class="btn btn-success full-width">Filter</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <h1>Commentaitr index</h1>
+    {% for commentaire in commentaires %}
+        <div class="item-click">
+            <article>
+                <div class="brows-company">
+                    <div class="col-md-2 col-sm-2">
+                        <div class="brows-company-pic">
+
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="brows-company-name">
+                            <span class="brows-company-tagline">{{ commentaire.date ? commentaire.date|date('Y-m-d') : '' }}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="brows-company-location">
+                            <p><i class="fa fa-map-marker"></i> {{ commentaire.commentaire }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                        <div class="brows-company-position">
+
+
+                            <form action ="{{ path('commentaire_edit', {'id': commentaire.id}) }}">
+
+                                <div class="mng-company-action"><button ><i class="fa fa-edit"></i></button>
+                                </div>
+                            </form>
+                            <form method="post" action="{{ path('commentaire_delete', {'id': commentaire.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ commentaire.id) }}">
+                                <div class="mng-company-action">  <button>
+                                        <i class="fa fa-trash-o"></i></button></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+        </div>
+
+        </article>
+        </div>
+        </section>
+    {% endfor %}
+
+
+    <center> <a  class="btn btn-success "href="{{ path('commentaire_new',{'id':app.user.username}) }}">Create new</a></center>
+
+{% endblock %}

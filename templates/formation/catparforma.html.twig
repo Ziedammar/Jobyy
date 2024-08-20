@@ -1,0 +1,169 @@
+{% extends 'base.html.twig' %}
+      {% block nav %}
+
+          {% include 'Inc/nav2.html.twig' %}
+
+      {% endblock %}
+
+
+{% block body %}
+    <!-- End Navigation -->
+    <div class="clearfix"></div>
+
+    <!-- Title Header Start -->
+    <section class="inner-header-title" style="background-image:url(../../assets/img/banner-10.jpg);">
+        <div class="container">
+            <h1>Liste Formations</h1>
+        </div>
+    </section>
+    <div class="clearfix"></div>
+
+
+
+
+    <!-- Member list start -->
+    <section class="member-card gray">
+        <div class="container">
+
+            <!-- search filter -->
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="search-filter">
+
+                        <div class="col-md-4 col-sm-5">
+                            <div class="filter-form">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search…">
+                                    <span class="input-group-btn">
+												<button type="button" class="btn btn-default">Go</button>
+											</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 col-sm-7">
+                            <div class="short-by pull-right">
+                                Short By
+                                <div class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Short By Date</a></li>
+                                        <li><a href="#">Short By Views</a></li>
+                                        <li><a href="#">Short By Popular</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            {% for formation in formations %}
+            {% if formation.status==0%}
+            <!-- Freelancers Start -->
+            <div class="row">
+
+                <!-- Single Freelancer -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="freelance-container">
+                        <div class="freelance-box">
+                            <span class="freelance-status">Available</span>
+                            <h4 class="flc-rate">{{ formation.prix }} $</h4>
+                            <div class="freelance-inner-box">
+                                <div class="freelance-box-thumb">
+                                    <img src="{{ asset('uploads/'~ formation.image) }}" style="width:100%" ></td>
+                                </div>
+                                <div class="freelance-box-detail">
+                                    <h4>{{ formation.nom }}</h4>
+                                    <span class="desination"></span>
+                                </div>
+                            </div>
+                            <div class="freelance-box-extra">
+                                <ul>
+                                    <li>{{ formation.date|date('Y-m-d') }}</li>
+                                    <li class="more-skill bg-primary">{{ formation.secteur }}</li>
+                                </ul>
+                                <p>{{ formation.description }}</p>
+                            </div>
+                            <div class="freelance-box-extra">
+                                <a class="" href=""><i class="fa fa-thumbs-o-up" aria-hidden="true" style="width:35px" ></i></a>
+
+                                <a class="" href=""><i class="fa fa-thumbs-o-down" aria-hidden="true" ></i></a>
+                            </div>
+                        </div>
+                        <a href="{{ path("forma", {"id": formation.id}) }}"  class="btn btn-freelance bt-1">View Detail</a>
+                    </div>
+                </div>
+                {% else %}
+                {% endif %}
+
+                {% endfor %}
+                <!-- Single Freelancer -->
+
+                <div class="col-md-12 col-sm-12">
+                    <div class="text-center">
+                        <a href="#" class="btn btn-primary">Load More</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- Accordion Design End -->
+
+    <!-- Sign Up Window Code -->
+    <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="tab" role="tabpanel">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#login" role="tab" data-toggle="tab">Sign In</a></li>
+                            <li role="presentation"><a href="#register" role="tab" data-toggle="tab">Sign Up</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content" id="myModalLabel2">
+                            <div role="tabpanel" class="tab-pane fade in active" id="login">
+                                <img src="assets/img/logo.png" class="img-responsive" alt="" />
+                                <div class="subscribe wow fadeInUp">
+                                    <form class="form-inline" method="post">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <input type="email"  name="email" class="form-control" placeholder="Username" required="">
+                                                <input type="password" name="password" class="form-control"  placeholder="Password" required="">
+                                                <div class="center">
+                                                    <button type="submit" id="login-btn" class="submit-btn"> Login </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane fade" id="register">
+                                <img src="assets/img/logo.png" class="img-responsive" alt="" />
+                                <form class="form-inline" method="post">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <input type="text"  name="email" class="form-control" placeholder="Your Name" required="">
+                                            <input type="email"  name="email" class="form-control" placeholder="Your Email" required="">
+                                            <input type="email"  name="email" class="form-control" placeholder="Username" required="">
+                                            <input type="password" name="password" class="form-control"  placeholder="Password" required="">
+                                            <div class="center">
+                                                <button type="submit" id="subscribe" class="submit-btn"> Create Account </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Sign Up Window -->
+
+{% endblock %}

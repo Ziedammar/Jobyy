@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+      {% block nav %}
+
+		  {% include 'Inc/nav2.html.twig' %}
+
+	  {% endblock %}
+
+
+{% block body %}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#myInput").on("keyup", function() {
+				var value = $(this).val().toLowerCase();
+				$("#form1 ").filter(function() {
+					$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+				});
+			});
+		});
+	</script>
+
+
+	<div class="clearfix"></div>
+
+	<!-- Title Header Start -->
+	<section class="inner-header-title" style="background-image:url(assets/img/banner-10.jpg);">
+		<div class="container">
+			<h1>Blog Page</h1>
+		</div>
+	</section>
+	<div class="clearfix"></div>
+	<!-- Title Header End -->
+
+	<!-- All blog List Start -->
+	<section class="section">
+		<div class="container">
+			<div class="row .no-mrg">
+				<!-- Start Blogs -->
+
+				<form action="#">
+					<div class="search-form">
+						<div class="input-group">
+							<input type="text"  id="myInput"class="form-control" placeholder="Search…">
+							<span class="input-group-btn">
+												<button type="button" class="btn btn-default">Go</button>
+											</span>
+						</div>
+					</div>
+				</form>
+				<div class="col-md-8">
+					{% for blog in blog %}
+					<article class="blog-news" id="form1">
+						<div class="short-blog">
+							<figure class="img-holder">
+
+								<a href="{{ path('blog-detail', {'id': blog.id ,'id2':app.user.username,'cat':blog.cat}) }}"> <img src="{{ blog.image }}" class="img-responsive" alt="" /></a>
+								<div class="blog-post-date">
+									Mar 12, 2017
+								</div>
+							</figure>
+							<div class="blog-content">
+								<div class="post-meta">By: <span class="author">{{ blog.user }}</span> </div>
+								<a href="{{ path('blog-detail', {'id': blog.id ,'id2':app.user.username,'cat':blog.cat}) }}"><h2>{{ blog.titre }}</h2></a>
+								<div class="blog-text">
+									<P>{{  blog.contenu}}</P>
+									<div class="post-meta">Filed Under: <span class="category"><a href="#">Technology</a></span></div>
+								</div>
+							</div>
+						</div>
+
+
+
+					</article>
+					{% endfor %}
+				</div>
+
+					<div class="col-md-4">
+
+						</div>
+					</div>
+					<!-- End Sidebar Start -->
+				</div>
+				<div class="row">
+					<ul class="pagination">
+						<li><a href="#">&laquo;</a></li>
+						<li class="active"><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#"><i class="fa fa-ellipsis-h"></i></a></li>
+						<li><a href="#">&raquo;</a></li>
+					</ul>
+				</div>
+			</div>
+	</section>
+{% endblock %}
+

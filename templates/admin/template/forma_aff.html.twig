@@ -1,0 +1,94 @@
+{% extends 'admin/base.html.twig' %}
+{% block nav %}
+    {% include 'admin/include/navbar.html.twig' %}
+{% endblock %}
+{% block sidebar %}
+    {% include 'admin/include/sidebar.html.twig' %}
+{% endblock %}
+
+
+{% block body %}
+
+
+
+
+    <div class="content-page">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h4 class="card-title">Liste des Formations</h4>
+                            </div>
+
+                        </div>
+                        <div class="card-body">
+                            <div class="collapse" id="datatable-1">
+                                <div class="card"><kbd class="bg-dark"><pre id="bootstrap-datatables" class="text-white"><code>
+
+                                </code></pre></kbd></div>
+                            </div>
+                            <div class="table-responsive">
+                                <table id="datatable" class="table data-table table-striped table-bordered" >
+                                    <thead>
+                                    <tr>
+                                    <th>Nom </th>
+                                    <th>Image</th>
+                                    <th>Prix</th>
+                                    <th>Description</th>
+                                    <th>Secteur</th>
+                                    <th>Date Début</th>
+                                    <th>Date fin</th>
+                                    <th>Categorie </th>
+                                    <th>Nom user</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+
+                                    </tr>
+                                    </thead>
+                                    {% for formation in formations %}
+                                        <tr>
+                                            <td>{{ formation.nom }}</td>
+                                            <td ><img src="{{ asset('uploads/'~ formation.image) }}" style="width:30px" ></td>
+                                            <td>{{ formation.prix }}</td>
+                                            <td>{{ formation.description }}</td>
+                                            <td>{{ formation.secteur }}</td>
+                                            <td>{{ formation.date|date('Y-m-d') }}</td>
+                                            <td>{{ formation.datefin |date('Y-m-d') }}</td>
+                                            <td>{{ formation.idcategorie.nom }}</td>
+                                            <td>
+                                            {% for user in formation.iduser %}
+                                             {{ user.email }}
+                                            {% endfor %}
+                                            </td>
+                                            <td>
+                                                {% if formation.status==1%}
+                                                    <a class="mm-icons-list" href="{{path("active_form",{"id":formation.id}) }}"><i class="dripicons dripicons-lock" aria-hidden="true" ></i></a>
+                                                {% else %}
+                                                    <a class="mm-icons-list" href="{{path("desactive_form",{"id":formation.id}) }}"><i class="dripicons dripicons-lock-open" aria-hidden="true" ></i></a>
+                                                {% endif %}
+
+                                            </td>
+
+                                            <td>
+                                                <a class="mm-icons-list"  href="{{ path("admin_formation_modification",{"id":formation.id}) }}"><i class="las la-edit" aria-hidden="true"></i></a>
+                                                <a class="mm-icons-list"  href="{{ path("admin_formation_suppression",{"id":formation.id}) }}"><i class="dripicons dripicons-trash" aria-hidden="true"></i></a>
+                                            </td>
+                                        </tr>
+
+
+                                    {% endfor %}
+                                    <a class="btn btn-success" href="{{ path('listformapdf') }}">Create pdf</a>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

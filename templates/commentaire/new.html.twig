@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+      {% block nav %}
+
+          {% include 'Inc/nav2.html.twig' %}
+
+      {% endblock %}
+
+{% block title %}New Commentaire{% endblock %}
+
+{% block body %}
+    <h1>Create new Commentaire</h1>
+
+    {{ include('commentaire/_form.html.twig') }}
+
+    <a href="{{ path('commentaire_index') }}">back to list</a>
+{% endblock %}

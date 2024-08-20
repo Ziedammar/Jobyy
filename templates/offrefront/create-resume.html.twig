@@ -1,0 +1,407 @@
+{% extends 'base.html.twig' %}
+      {% block nav %}
+
+		  {% include 'Inc/nav2.html.twig' %}
+
+	  {% endblock %}
+
+
+{% block body %}
+<div class="clearfix"></div>
+			
+			<!-- Header Title Start -->
+			<section class="inner-header-title blank">
+				<div class="container">
+					<h1>Create Resume</h1>
+				</div>
+			</section>
+			<div class="clearfix"></div>
+			<!-- Header Title End -->
+			
+			<!-- General Detail Start -->
+			<div class="section detail-desc">
+				<div class="container white-shadow">
+				
+					<div class="row">
+						<div class="detail-pic js">
+							<div class="box">
+								<input type="file" name="upload-pic[]" id="upload-pic" class="inputfile" />
+								<label for="upload-pic"><i class="fa fa-upload" aria-hidden="true"></i><span></span></label>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row bottom-mrg">
+						<form class="add-feild">
+							<div class="col-md-6 col-sm-6">
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="Your Name">
+								</div>
+							</div>
+							
+							<div class="col-md-6 col-sm-6">
+								<div class="input-group">
+									<input type="email" class="form-control" placeholder="Your Email">
+								</div>
+							</div>
+							
+							<div class="col-md-6 col-sm-6">
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="Professional Title">
+								</div>
+							</div>
+							
+							<div class="col-md-6 col-sm-6">
+								<div class="input-group">
+									<select class="form-control input-lg">
+										<option>All Categories</option>
+										<option>Software</option>
+										<option>Hardware</option>
+										<option>Machanical</option>
+										<option>HR/Manager</option>
+									</select>
+								</div>
+							</div>
+							
+							<div class="col-md-12 col-sm-12">
+								<textarea class="form-control" placeholder="About Notes"></textarea>
+							</div>
+							
+						</form>
+					</div>
+					
+					<div class="row no-padd">
+						<div class="detail pannel-footer">
+							<div class="col-md-12 col-sm-12">
+								<div class="detail-pannel-footer-btn pull-right">
+									<a href="#" class="footer-btn choose-cover">Choose Cover Image</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<!-- General Detail End -->
+			
+			<!-- full detail SetionStart-->
+			<section class="full-detail">
+				<div class="container">
+					<div class="row bottom-mrg extra-mrg">
+						<form>
+							<h2 class="detail-title">General Information</h2>
+							
+							<div class="col-md-6 col-sm-6">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+									<input type="text" class="form-control" placeholder="Email Address">
+								</div>	
+							</div>
+							
+							<div class="col-md-6 col-sm-6">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-phone"></i></span>
+									<input type="text" class="form-control" placeholder="Phone Number">
+								</div>	
+							</div>
+							
+							<div class="col-md-6 col-sm-6">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-globe"></i></span>
+									<input type="text" class="form-control" placeholder="Website Address">
+								</div>	
+							</div>
+							
+							<div class="col-md-6 col-sm-6">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+									<input type="text" class="form-control" placeholder="Location: London UK, Newyork..">
+								</div>	
+							</div>
+							
+							<div class="col-md-6 col-sm-6">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-birthday-cake"></i></span>
+									<input type="text" id="dob" data-lang="en" data-large-mode="true" data-min-year="2017" data-max-year="2020" data-disabled-days="08/17/2017,08/18/2017" data-id="datedropper-0" data-theme="my-style" class="form-control" readonly="">
+								</div>	
+							</div>
+							
+							<div class="col-md-6 col-sm-6">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-flag"></i></span>
+									<select class="form-control input-lg">
+										<option>Select Region</option>
+										<option>United Kingdom</option>
+										<option>United State</option>
+										<option>India</option>
+										<option>More Other</option>
+									</select>
+								</div>	
+							</div>
+							
+						</form>
+					</div>
+					
+					<div class="row bottom-mrg extra-mrg">
+						<form>
+							<h2 class="detail-title">Social Profile</h2>
+							
+							<div class="col-md-6 col-sm-6">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-facebook"></i></span>
+									<input type="text" class="form-control" placeholder="Profile Link">
+								</div>	
+							</div>
+							
+							<div class="col-md-6 col-sm-6">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-google-plus"></i></span>
+									<input type="text" class="form-control" placeholder="Profile Link">
+								</div>	
+							</div>
+							
+							<div class="col-md-6 col-sm-6">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-twitter"></i></span>
+									<input type="text" class="form-control" placeholder="Profile Link">
+								</div>	
+							</div>
+							
+							<div class="col-md-6 col-sm-6">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-instagram"></i></span>
+									<input type="text" class="form-control" placeholder="Profile Link">
+								</div>	
+							</div>
+							
+							<div class="col-md-6 col-sm-6">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-linkedin"></i></span>
+									<input type="text" class="form-control" placeholder="Profile Link">
+								</div>	
+							</div>
+							
+							<div class="col-md-6 col-sm-6">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-dribbble"></i></span>
+									<input type="text" class="form-control" placeholder="Profile Link">
+								</div>	
+							</div>
+							
+						</form>
+					</div>
+					
+					<div class="row bottom-mrg extra-mrg">
+						<form>
+							<h2 class="detail-title">Resume Content</h2>
+							<div class="col-md-12 col-sm-12">
+								<textarea class="form-control textarea" placeholder="About Company"></textarea>
+							</div>	
+							
+						</form>
+					</div>
+					<div class="row bottom-mrg extra-mrg">
+						<form>
+							<h2 class="detail-title">Add Education</h2>
+							<div class="extra-field-box">
+								<div class="multi-box">	
+									<div class="dublicat-box">
+										<div class="col-md-12 col-sm-12">
+											<input type="text" class="form-control" placeholder="School Name, e.g. Master Of Technology">
+										</div>
+										
+										<div class="col-md-12 col-sm-12">
+											<input type="text" class="form-control" placeholder="Qualification, e.g. Master Of Arts">
+										</div>
+										
+										<div class="col-md-6 col-sm-6">
+											<div class="input-group">
+												<span class="input-group-addon">Date From</span>
+												<input type="text" id="edu-start" data-lang="en" data-large-mode="true" data-min-year="2017" data-max-year="2020" data-disabled-days="08/17/2017,08/18/2017" data-id="datedropper-0" data-theme="my-style" class="form-control" readonly="">
+											</div>
+										</div>
+										
+										<div class="col-md-6 col-sm-6">
+											<div class="input-group">
+												<span class="input-group-addon">Date To</span>
+												<input type="text" id="edu-end" data-lang="en" data-large-mode="true" data-min-year="2017" data-max-year="2020" data-disabled-days="08/17/2017,08/18/2017" data-id="datedropper-0" data-theme="my-style" class="form-control" readonly="">
+											</div>
+										</div>
+										
+										<div class="col-md-12 col-sm-12">
+											<textarea class="form-control textarea" placeholder="Notes"></textarea>
+										</div>
+										
+										<button type="button" class="btn remove-field">Remove</button>
+									</div>
+								</div>									
+								<button type="button" class="add-field">Add field</button>
+							</div>
+						</form>
+					</div>
+					
+					<div class="row bottom-mrg extra-mrg">
+						<form>
+							<h2 class="detail-title">Add Experience</h2>
+							<div class="extra-field-box">
+								<div class="multi-box">	
+									<div class="dublicat-box">
+										<div class="col-md-12 col-sm-12">
+											<input type="text" class="form-control" placeholder="Employer">
+										</div>
+										
+										<div class="col-md-12 col-sm-12">
+											<input type="text" class="form-control" placeholder="Position, e.g. Web Designer">
+										</div>
+										
+										<div class="col-md-6 col-sm-6">
+											<div class="input-group">
+												<span class="input-group-addon">Date From</span>
+												<input type="text" id="exp-start" data-lang="en" data-large-mode="true" data-min-year="2017" data-max-year="2020" data-disabled-days="08/17/2017,08/18/2017" data-id="datedropper-0" data-theme="my-style" class="form-control" readonly="">
+											</div>
+										</div>
+										
+										<div class="col-md-6 col-sm-6">
+											<div class="input-group">
+												<span class="input-group-addon">Date To</span>
+												<input type="text" id="exp-end" data-lang="en" data-large-mode="true" data-min-year="2017" data-max-year="2020" data-disabled-days="08/17/2017,08/18/2017" data-id="datedropper-0" data-theme="my-style" class="form-control" readonly="">
+											</div>
+										</div>
+										
+										<div class="col-md-12 col-sm-12">
+											<textarea class="form-control textarea" placeholder="Notes"></textarea>
+										</div>
+										
+										<button type="button" class="btn remove-field">Remove</button>
+									</div>
+								</div>									
+								<button type="button" class="add-field">Add field</button>
+							</div>
+						</form>
+					</div>
+					
+					<div class="row bottom-mrg extra-mrg">
+						<form>
+							<h2 class="detail-title">Add Skills</h2>
+							<div class="extra-field-box">
+								<div class="multi-box">	
+									<div class="dublicat-box">
+									
+										<div class="col-md-12 col-sm-12">
+											<input type="text" class="form-control" placeholder="Skills, e.g. Css, Html...">
+										</div>
+										
+										<div class="col-md-12 col-sm-12">
+											<div class="input-group">
+											<span class="input-group-addon">%</span>
+												<input type="text" class="form-control" placeholder="85%">
+											</div>
+										</div>
+											
+										<button type="button" class="btn remove-field">Remove</button>
+									</div>
+								</div>									
+								<button type="button" class="add-field">Add field</button>
+							</div>
+						</form>
+					</div>
+					<div class="row bottom-mrg extra-mrg">
+						<form>
+							<div class="col-md-12">
+								<button class="btn btn-success btn-primary small-btn">Submit your company</button>
+							</div>
+						</form>
+					</div>					
+				</div>
+			</section>
+			<!-- full detail SetionStart-->			
+
+			
+
+			
+			<!-- Sign Up Window Code -->
+			<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="tab" role="tabpanel">
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" class="active"><a href="#login" role="tab" data-toggle="tab">Sign In</a></li>
+								<li role="presentation"><a href="#register" role="tab" data-toggle="tab">Sign Up</a></li>
+							</ul>
+							<!-- Tab panes -->
+							<div class="tab-content" id="myModalLabel2">
+								<div role="tabpanel" class="tab-pane fade in active" id="login">
+									<img src="assets/img/logo.png" class="img-responsive" alt="" />
+									<div class="subscribe wow fadeInUp">
+										<form class="form-inline" method="post">
+											<div class="col-sm-12">
+												<div class="form-group">
+													<input type="email"  name="email" class="form-control" placeholder="Username" required="">
+													<input type="password" name="password" class="form-control"  placeholder="Password" required="">
+													<div class="center">
+													<button type="submit" id="login-btn" class="submit-btn"> Login </button>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+
+								<div role="tabpanel" class="tab-pane fade" id="register">
+								<img src="assets/img/logo.png" class="img-responsive" alt="" />
+									<form class="form-inline" method="post">
+											<div class="col-sm-12">
+												<div class="form-group">
+													<input type="text"  name="email" class="form-control" placeholder="Your Name" required="">
+													<input type="email"  name="email" class="form-control" placeholder="Your Email" required="">
+													<input type="email"  name="email" class="form-control" placeholder="Username" required="">
+													<input type="password" name="password" class="form-control"  placeholder="Password" required="">
+													<div class="center">
+													<button type="submit" id="subscribe" class="submit-btn"> Create Account </button>
+													</div>
+												</div>
+											</div>
+										</form>
+								</div>
+							</div>
+							</div>
+						</div>
+						</div>
+				</div>
+			</div>   
+			<!-- End Sign Up Window -->
+			<button class="w3-button w3-teal w3-xlarge w3-right" onclick="openRightMenu()"><i class="spin fa fa-cog" aria-hidden="true"></i></button>
+			<div class="w3-sidebar w3-bar-block w3-card-2 w3-animate-right" style="display:none;right:0;" id="rightMenu">
+				<button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+				<ul id="styleOptions" title="switch styling">
+					<li>
+						<a href="javascript: void(0)" class="cl-box blue" data-theme="colors/blue-style"></a>
+					</li>
+					<li>
+						<a href="javascript: void(0)" class="cl-box red" data-theme="colors/red-style"></a>
+					</li>
+					<li>
+						<a href="javascript: void(0)" class="cl-box purple" data-theme="colors/purple-style"></a>
+					</li>
+					<li>
+						<a href="javascript: void(0)" class="cl-box green" data-theme="colors/green-style"></a>
+					</li>
+					<li>
+						<a href="javascript: void(0)" class="cl-box dark-red" data-theme="colors/dark-red-style"></a>
+					</li>
+					<li>
+						<a href="javascript: void(0)" class="cl-box orange" data-theme="colors/orange-style"></a>
+					</li>
+					<li>
+						<a href="javascript: void(0)" class="cl-box sea-blue" data-theme="colors/sea-blue-style "></a>
+					</li>
+					<li>
+						<a href="javascript: void(0)" class="cl-box pink" data-theme="colors/pink-style"></a>
+					</li>
+				</ul>
+			</div>
+			
+
+{% endblock %}

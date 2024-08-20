@@ -1,0 +1,210 @@
+{% extends 'base.html.twig' %}
+      {% block nav %}
+
+          {% include 'Inc/nav2.html.twig' %}
+
+      {% endblock %}
+
+
+{% block body %}
+
+<div class="clearfix"></div>
+
+<!-- Title Header Start -->
+<section class="inner-header-page">
+    <div class="container">
+
+        <div class="col-md-8">
+            <div class="left-side-container">
+                <div class="freelance-image"><img src="../{{ user.profilePic }}" class="img-responsive img-circle" alt=""></div>
+                <div class="header-details">
+                    <h4>{{  user.nom }} {{  user.prenom }}
+                    <p>{{ user.adresse }}</p>
+                    <ul>
+                        <li>
+                            <div class="star-rating" data-rating="4.2">
+                                <span class="fa fa-star fill"></span>
+                                <span class="fa fa-star fill"></span>
+                                <span class="fa fa-star fill"></span>
+                                <span class="fa fa-star fill"></span>
+                                <span class="fa fa-star-half fill"></span>
+                            </div>
+                        </li>
+                        <li><img class="flag" > {{ user.pays }}</li>
+                        <li><div class="verified-action">Verified</div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 bl-1 br-gary">
+            <div class="right-side-detail">
+                <ul>
+                    <li><span class="detail-info">Location</span>{{ user.gouvernorat }}</li>
+                    <li><span class="detail-info">Email</span>{{ user.email }}</li>
+                    <li><span class="detail-info">Mobile</span>{{ user.tel }}</li>
+                    <li><span class="detail-info">Birthday</span>{{ user.birthday|date("d/m/Y") }}</li>
+                </ul>
+                <ul class="social-info">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+<div class="clearfix"></div>
+<!-- Title Header End -->
+
+<!-- Freelancer Detail Start -->
+<section>
+    <div class="container">
+
+        <div class="col-md-8 col-sm-8">
+            <div class="container-detail-box">
+
+                <div class="apply-job-header">
+                    <h4>About</h4>
+                </div>
+
+                <div class="apply-job-detail">
+                    <p>{{ user.AboutYou }}</p>
+                </div>
+
+
+
+
+            </div>
+
+            <!-- Similar Jobs -->
+            <div class="container-detail-box">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Review</h3>
+                    </div>
+                </div>
+
+                <div class="row">
+
+
+                    <div class="review-list">
+
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Sidebar Start-->
+        <div class="col-md-4 col-sm-4">
+
+            <!-- Make An Offer -->
+            <div class="sidebar-container">
+                <div class="sidebar-box">
+                    <span class="sidebar-status">Available</span>
+                    <div class="sidebar-inner-box">
+                        <div class="sidebar-box-thumb">
+                            <img src="../{{ user.profilePic }}" class="img-responsive img-circle" alt="" />
+                        </div>
+                        <div class="sidebar-box-detail">
+                            <h4>{{ user.nom }} {{ user.prenom }}</h4>
+                            <span class="desination">{{ user.email }}</span>
+                        </div>
+                    </div>
+
+                </div>
+                <a href="{{ path('add_friend',{'id':app.user.username,'id1':user.username}) }}" class="btn btn-sidebar bt-1 bg-success">Put in Followed list</a>
+                <a href="{{ path('video_chat') }}" class="btn btn-sidebar bt-1 bg-success">Start A Conference Room!</a>
+
+            </div>
+
+            <!-- Website & Portfolio -->
+            <div class="sidebar-wrapper">
+                <div class="sidebar-box-header bb-1">
+                    <h4>Website & Portfolio</h4>
+                </div>
+
+                <ul class="block-list">
+                    <li><i class="fa fa-globe cl-success"></i>www.mysite.com</li>
+                    <li><i class="fa fa-briefcase cl-success"></i>Portfolio</li>
+                    <li><i class="fa fa-pencil cl-success"></i>My Blog</li>
+                </ul>
+            </div>
+
+            <!-- Similar Profile -->
+            <div class="sidebar-wrapper">
+
+                <div class="sidebar-box-header bb-1">
+                    <h4>Similar Candidate</h4>
+                </div>
+
+                <div class="member-profile-list">
+                    <div class="member-profile-thumb">
+                        <a href="company-detail.html"><img src="assets/img/can-2.png" class="img-responsive img-circle" alt="" /></a>
+                    </div>
+                    <div class="member-profile-detail">
+                        <h4><a href="company-detail.html">Adam Crivatinly</a></h4>
+                        <span>Web Developer</span>
+                        <span class="cl-success">Freelancer</span>
+                    </div>
+                </div>
+
+                <div class="member-profile-list">
+                    <div class="member-profile-thumb">
+                        <a href="company-detail.html"><img src="assets/img/can-3.png" class="img-responsive img-circle" alt="" /></a>
+                    </div>
+                    <div class="member-profile-detail">
+                        <h4><a href="company-detail.html">Adam Crivatinly</a></h4>
+                        <span>Web Developer</span>
+                        <a href="company-detail.html"><span class="cl-success">Freelancer</span></a>
+                    </div>
+                </div>
+
+                <div class="member-profile-list">
+                    <div class="member-profile-thumb">
+                        <a href="company-detail.html"><img src="assets/img/can-1.png" class="img-responsive img-circle" alt="" /></a>
+                    </div>
+                    <div class="member-profile-detail">
+                        <h4><a href="company-detail.html">Adam Crivatinly</a></h4>
+                        <span>Web Developer</span>
+                        <a href="company-detail.html"><span class="cl-success">Freelancer</span></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Share This Job -->
+            <div class="sidebar-wrapper">
+                <div class="sidebar-box-header bb-1">
+                    <h4>Share This Job</h4>
+                </div>
+
+                <ul class="social-share">
+                    <li><a href="#" class="fb-share"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" class="tw-share"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" class="gp-share"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#" class="in-share"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#" class="li-share"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#" class="be-share"><i class="fa fa-behance"></i></a></li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- End Sidebar -->
+
+    </div>
+</section>
+<!-- Freelancer Detail End -->
+
+
+</div>
+{% endblock %}

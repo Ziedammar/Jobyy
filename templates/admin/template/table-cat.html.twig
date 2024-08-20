@@ -1,0 +1,74 @@
+{% extends 'admin/base.html.twig' %}
+{% block nav %}
+    {% include 'admin/include/navbar.html.twig' %}
+{% endblock %}
+{% block sidebar %}
+    {% include 'admin/include/sidebar.html.twig' %}
+{% endblock %}
+
+
+{% block body %}
+    {% for message in app.flashes('success')%}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+
+    {% endfor%}
+
+
+
+    <div class="content-page">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h4 class="card-title">Liste des Categories des Formations</h4>
+                            </div>
+
+                        </div>
+                        <div class="card-body">
+                            <div class="collapse" id="datatable-1">
+                                <div class="card"><kbd class="bg-dark"><pre id="bootstrap-datatables" class="text-white"><code>
+
+                                </code></pre></kbd></div>
+                            </div>
+                            <div class="table-responsive">
+                                <table id="datatable" class="table data-table table-striped table-bordered" >
+                                    <thead>
+                                    <tr>
+                                        <th>Nom </th>
+                                        <th>Type</th>
+                                        <th>Liste Formations</th>
+                                        <th>Action</th>
+
+                                    </tr>
+                                    </thead>
+                                    {% for categorie in categories %}
+                                       <tr>
+                                          <td>{{ categorie.nom }}</td>
+                                          <td>{{ categorie.type }}</td>
+                                           <td>
+                                               <a class="mm-icons-list" href="{{ path("listeformationcat",{"id":categorie.id}) }}"><i class="dripicons dripicons-to-do" aria-hidden="true"></i></a>
+                                           </td>
+                                          <td>
+                                              <a class="mm-icons-list" href="{{ path("admin_categorie_modification",{"id":categorie.id}) }}"><i class="las la-edit" aria-hidden="true"></i></a>
+
+                                              <a class="mm-icons-list"  href="{{ path("admin_categorie_suppression",{"id":categorie.id}) }}"><i class="dripicons dripicons-trash" aria-hidden="true"></i></a>
+                                          </td>
+                                       </tr>
+                                    {% endfor %}
+
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

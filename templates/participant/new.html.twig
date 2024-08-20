@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+      {% block nav %}
+
+          {% include 'Inc/nav2.html.twig' %}
+
+      {% endblock %}
+
+
+
+{% block title %}New Participant{% endblock %}
+
+{% block body %}
+    <h1>Create new Participant</h1>
+
+    {{ include('for-candidates/browse-events.html.twig') }}
+
+    <a href="{{ path('participant_index') }}">back to list</a>
+{% endblock %}

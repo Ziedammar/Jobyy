@@ -1,0 +1,621 @@
+<div class="mm-sidebar  sidebar-default ">
+    <div class="mm-sidebar-logo d-flex align-items-center justify-content-between">
+        <a href="/" class="header-logo">
+            <img src="{{ asset('../admin/assets/images/logo.png') }}" class="img-fluid rounded-normal light-logo" alt="logo">
+            <img src="{{ asset('../admin/assets/images/white-logo.png') }}" class="img-fluid rounded-normal darkmode-logo" alt="logo">
+        </a>
+        <div class="side-menu-bt-sidebar">
+            <i class="las la-bars wrapper-menu"></i>
+        </div>
+    </div>
+    <div class="data-scrollbar" data-scroll="1">
+        <nav class="mm-sidebar-menu">
+            <ul id="mm-sidebar-toggle" class="side-menu">
+
+                <li class="">
+                    <a href="#app" class="collapsed svg-icon" data-toggle="collapse" aria-expanded="false">
+                        <i>
+                            <svg class="svg-icon" id="mm-app-1" width="20" xmlns="http://www.w3.org/2000/svg"
+                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                            </svg>
+                        </i>
+                        <span class="ml-2">Application</span>
+                        <i class="las la-angle-right mm-arrow-right arrow-active"></i>
+                        <i class="las la-angle-down mm-arrow-right arrow-hover"></i>
+                    </a>
+                    <ul id="app" class="submenu collapse" data-parent="#mm-sidebar-toggle">
+                        <li class="">
+                            <a href="#user" class="collapsed svg-icon" data-toggle="collapse" aria-expanded="false">
+                                <i class="">
+                                    <svg class="svg-icon" id="mm-user-1" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                         viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                    </svg>
+                                </i>
+                                <span class="">User Details</span>
+                                <i class="las la-angle-right mm-arrow-right arrow-active"></i>
+                                <i class="las la-angle-down mm-arrow-right arrow-hover"></i>
+                            </a>
+                            <ul id="user" class="submenu collapse" data-parent="#app">
+                                <li class="">
+                                    <a href="/user-profile" class="svg-icon">
+                                        <i class="">
+                                            <svg class="svg-icon" id="mm-user-1-1" xmlns="http://www.w3.org/2000/svg"
+                                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </i><span class="">User Profile</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="/user-add" class="svg-icon">
+                                        <i class="">
+                                            <svg class="svg-icon" id="mm-user-1-2" xmlns="http://www.w3.org/2000/svg"
+                                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                      d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                                            </svg>
+                                        </i><span class="">Add an Admin </span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="/user-list" class="svg-icon">
+                                        <i class="">
+                                            <svg class="svg-icon" id="mm-user-1-3" xmlns="http://www.w3.org/2000/svg"
+                                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                                            </svg>
+                                        </i><span class="">User List</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="/chat" class="svg-icon">
+                                <i class="">
+                                    <svg class="svg-icon" id="mm-chat-1" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                         viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                    </svg>
+                                </i><span class="">Chat</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/claimlist" class="svg-icon">
+                                <i class="">
+                                    <svg class="svg-icon" id="mm-todo-1" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                         viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                                    </svg>
+                                </i><span class="">Users Claims</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
+                <li class="">
+                    <a href="#table" class="collapsed svg-icon" data-toggle="collapse" aria-expanded="false">
+                        <i>
+                            <svg class="svg-icon" id="mm-table-1" width="20" xmlns="http://www.w3.org/2000/svg"
+                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                            </svg>
+                        </i>
+                        <span class="ml-2">Forms</span>
+                        <i class="las la-angle-right mm-arrow-right arrow-active"></i>
+                        <i class="las la-angle-down mm-arrow-right arrow-hover"></i>
+                    </a>
+                    <ul id="table" class="submenu collapse" data-parent="#mm-sidebar-toggle">
+                        <li class="">
+                            <a href="/event/listbackend" class="svg-icon">
+                                <i class="">
+                                    <svg class="svg-icon" id="mm-table-1-1" xmlns="http://www.w3.org/2000/svg"
+                                         width="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none"
+                                         stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <rect x="4" y="4" width="16" height="16" rx="2" />
+                                        <line x1="4" y1="10" x2="20" y2="10" />
+                                        <line x1="10" y1="4" x2="10" y2="20" />
+                                    </svg>
+                                </i><span class="">Events </span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/participant/listbackend" class="svg-icon">
+                                <i class="">
+                                    <svg class="svg-icon" id="mm-table-1-2" xmlns="http://www.w3.org/2000/svg"
+                                         width="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none"
+                                         stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <rect x="4" y="4" width="16" height="16" rx="2" />
+                                        <line x1="4" y1="10" x2="20" y2="10" />
+                                        <line x1="10" y1="4" x2="10" y2="20" />
+                                    </svg>
+                                </i><span class="">Participant</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/blog/listbackend" class="svg-icon">
+                                <i class="">
+                                    <svg class="svg-icon" id="mm-table-1-2" xmlns="http://www.w3.org/2000/svg"
+                                         width="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none"
+                                         stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <rect x="4" y="4" width="16" height="16" rx="2" />
+                                        <line x1="4" y1="10" x2="20" y2="10" />
+                                        <line x1="10" y1="4" x2="10" y2="20" />
+                                    </svg>
+                                </i><span class="">Blog</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/commentaire/listbackend" class="svg-icon">
+                                <i class="">
+                                    <svg class="svg-icon" id="mm-table-1-2" xmlns="http://www.w3.org/2000/svg"
+                                         width="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none"
+                                         stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <rect x="4" y="4" width="16" height="16" rx="2" />
+                                        <line x1="4" y1="10" x2="20" y2="10" />
+                                        <line x1="10" y1="4" x2="10" y2="20" />
+                                    </svg>
+                                </i><span class="">Commentaire</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                </li>
+
+                <li class="">
+                    <a href="#auth" class="collapsed svg-icon" data-toggle="collapse" aria-expanded="false">
+                        <i>
+                            <svg class="svg-icon" id="mm-icon-1" width="20" xmlns="http://www.w3.org/2000/svg"
+                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            </svg>
+                        </i>
+                        <span class="ml-2">Categorie Formations</span>
+                        <i class="las la-angle-right mm-arrow-right arrow-active"></i>
+                        <i class="las la-angle-down mm-arrow-right arrow-hover"></i>
+                    </a>
+                    <ul id="auth" class="submenu collapse" data-parent="#mm-sidebar-toggle">
+                        <li class="">
+                            <a href="{{ path('categorie-add') }}" class="svg-icon">
+                                <i class="">
+                                    <svg class="svg-icon" id="mm-auth-1-1" width="20" xmlns="http://www.w3.org/2000/svg"
+                                         fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                    </svg>
+                                </i>
+                                <span class="">Ajouter Categorie</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="{{ path('categorie_forma_admin') }}" class="svg-icon">
+                                <i class="">
+                                    <svg class="svg-icon" id="mm-auth-1-1" width="20" xmlns="http://www.w3.org/2000/svg"
+                                         fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                    </svg>
+                                </i>
+                                <span class="">Liste Categorie</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="#charts" class="collapsed svg-icon" data-toggle="collapse" aria-expanded="false">
+                        <i>
+                            <svg class="svg-icon" id="mm-chart-1" width="20" xmlns="http://www.w3.org/2000/svg"
+                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M8 13v-1m4 1v-3m4 3V8M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                            </svg>
+                        </i>
+                        <span class="ml-2">Formation</span>
+                        <i class="las la-angle-right mm-arrow-right arrow-active"></i>
+                        <i class="las la-angle-down mm-arrow-right arrow-hover"></i>
+                    </a>
+                    <ul id="charts" class="submenu collapse" data-parent="#mm-sidebar-toggle">
+                        <li class="">
+                            <a href="{{ path('add_form') }}" class="svg-icon">
+                                <i class="">
+                                    <svg class="svg-icon" id="mm-chart-1-1" width="20"
+                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                         stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                </i>
+                                <span class="">Ajouter Formation</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="{{ path("forma_aff") }}" class="svg-icon">
+                                <i class="">
+                                    <svg class="svg-icon" id="mm-chart-1-2" width="20"
+                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                         stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                                    </svg>
+                                </i>
+                                <span class="">Liste Formations</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="{{ path('calendarf') }}" class="svg-icon">
+                                <i class="">
+                                    <svg class="svg-icon" id="mm-chart-1-3" width="20"
+                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                         stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                    </svg>
+                                </i>
+                                <span class="">Calendar Formations</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="{{ path('cms') }}" class="svg-icon">
+                                <i class="">
+                                    <svg class="svg-icon" id="mm-chart-1-3" width="20"
+                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                         stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                    </svg>
+                                </i>
+                                <span class="">Map des Secteurs Formations</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="{{ path('stat') }}" class="svg-icon">
+                                <i class="">
+                                    <svg class="svg-icon" id="mm-chart-1-3" width="20"
+                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                         stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                    </svg>
+                                </i>
+                                <span class="">Statistique Catégorie/Formations</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="#auth" class="collapsed svg-icon" data-toggle="collapse" aria-expanded="false">
+                        <i>
+                            <svg class="svg-icon" id="mm-icon-1" width="20" xmlns="http://www.w3.org/2000/svg"
+                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            </svg>
+                        </i>
+                        <span class="ml-2">Les Offres</span>
+                        <i class="las la-angle-right mm-arrow-right arrow-active"></i>
+                        <i class="las la-angle-down mm-arrow-right arrow-hover"></i>
+                    </a>
+                    <ul id="auth" class="submenu collapse" data-parent="#mm-sidebar-toggle">
+                        <li class="">
+                            <a href="{{ path('offre_new') }}" class="svg-icon">
+                                <i class="">
+                                    <svg class="svg-icon" id="mm-auth-1-1" width="20" xmlns="http://www.w3.org/2000/svg"
+                                         fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                    </svg>
+                                </i>
+                                <span class="">Add Offre</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="{{ path('offre_index') }}" class="svg-icon">
+                                <i class="">
+                                    <svg class="svg-icon" id="mm-auth-1-2" width="20" xmlns="http://www.w3.org/2000/svg"
+                                         fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                                    </svg>
+                                </i>
+                                <span class="">Liste des  Offre</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="{{ path ('categorieoffre_new') }}" class="svg-icon">
+                                <i class="">
+                                    <svg class="svg-icon" id="mm-table-1-1" xmlns="http://www.w3.org/2000/svg"
+                                         width="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none"
+                                         stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <rect x="4" y="4" width="16" height="16" rx="2" />
+                                        <line x1="4" y1="10" x2="20" y2="10" />
+                                        <line x1="10" y1="4" x2="10" y2="20" />
+                                    </svg>
+                                </i><span class="">Add Categorie Offre</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="{{ path ('categorieoffre_index') }}" class="svg-icon">
+                                <i class="">
+                                    <svg class="svg-icon" id="mm-table-1-2" xmlns="http://www.w3.org/2000/svg"
+                                         width="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none"
+                                         stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <rect x="4" y="4" width="16" height="16" rx="2" />
+                                        <line x1="4" y1="10" x2="20" y2="10" />
+                                        <line x1="10" y1="4" x2="10" y2="20" />
+                                    </svg>
+                                </i><span class="">Afficher Les categories </span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+                <li class="">
+                    <a href="#charts" class="collapsed svg-icon" data-toggle="collapse" aria-expanded="false">
+                        <i>
+                            <svg class="svg-icon" id="mm-chart-1" width="20" xmlns="http://www.w3.org/2000/svg"
+                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M8 13v-1m4 1v-3m4 3V8M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                            </svg>
+                        </i>
+                        <span class="ml-2">Charts</span>
+                        <i class="las la-angle-right mm-arrow-right arrow-active"></i>
+                        <i class="las la-angle-down mm-arrow-right arrow-hover"></i>
+                    </a>
+                    <ul id="charts" class="submenu collapse" data-parent="#mm-sidebar-toggle">
+                        <li class="">
+                            <a href="/chart" class="svg-icon">
+                                <i class="">
+                                    <svg class="svg-icon" id="mm-chart-1-1" width="20"
+                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                         stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                </i>
+                                <span class="">Apex Chart</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/chart_high" class="svg-icon">
+                                <i class="">
+                                    <svg class="svg-icon" id="mm-chart-1-2" width="20"
+                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                         stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                                    </svg>
+                                </i>
+                                <span class="">High Chart</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="{{ path('calendar') }}" class="svg-icon">
+                                <i class="">
+                                    <svg class="svg-icon" id="mm-chart-1-3" width="20"
+                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                         stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                    </svg>
+                                </i>
+                                <span class="">Calendar Events</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/chart_morris" class="svg-icon">
+                        <i class="">
+                            <svg class="svg-icon" id="mm-chart-1-3" width="20"
+                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                 stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                        </i>
+                        <span class="">Morries Charts</span>
+                    </a>
+                </li>
+            </ul>
+            </li>
+            <li class="">
+                <a href="#pages" class="collapsed svg-icon" data-toggle="collapse" aria-expanded="false">
+                    <i>
+                        <svg class="svg-icon" id="mm-extra-1" width="20" xmlns="http://www.w3.org/2000/svg"
+                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                        </svg>
+                    </i>
+                    <span class="ml-2">Extra Pages</span>
+                    <i class="las la-angle-right mm-arrow-right arrow-active"></i>
+                    <i class="las la-angle-down mm-arrow-right arrow-hover"></i>
+                </a>
+                <ul id="pages" class="submenu collapse" data-parent="#mm-sidebar-toggle">
+
+                    <li class="">
+                        <a href="#pages-error" class="collapsed svg-icon" data-toggle="collapse"
+                           aria-expanded="false">
+                            <i class="">
+                                <svg class="svg-icon" id="mm-extra-1-4" xmlns="http://www.w3.org/2000/svg"
+                                     width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                     class="feather feather-alert-triangle">
+                                    <path
+                                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                                    </path>
+                                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                </svg>
+                            </i><span class="">Error</span>
+                            <i class="las la-angle-right mm-arrow-right arrow-active"></i>
+                            <i class="las la-angle-down mm-arrow-right arrow-hover"></i>
+                        </a>
+                        <ul id="pages-error" class="submenu collapse" data-parent="#pages">
+                            <li class="">
+                                <a href="/error" class="svg-icon">
+                                    <i class="">
+                                        <svg class="svg-icon" id="mm-extra-1-4-1" xmlns="http://www.w3.org/2000/svg"
+                                             width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                             class="feather feather-alert-circle">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                        </svg>
+                                    </i><span class="">Error 404</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="/error500" class="svg-icon">
+                                    <i class="">
+                                        <svg class="svg-icon" id="mm-extra-1-4-2" xmlns="http://www.w3.org/2000/svg"
+                                             width="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50"
+                                             fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M9 9v-1a3 3 0 0 1 6 0v1" />
+                                            <path d="M8 9h8a6 6 0 0 1 1 3v3a5 5 0 0 1 -10 0v-3a6 6 0 0 1 1 -3" />
+                                            <line x1="3" y1="13" x2="7" y2="13" />
+                                            <line x1="17" y1="13" x2="21" y2="13" />
+                                            <line x1="12" y1="20" x2="12" y2="14" />
+                                            <line x1="4" y1="19" x2="7.35" y2="17" />
+                                            <line x1="20" y1="19" x2="16.65" y2="17" />
+                                            <line x1="4" y1="7" x2="7.75" y2="9.4" />
+                                            <line x1="20" y1="7" x2="16.25" y2="9.4" />
+                                        </svg>
+                                    </i><span class="">Error 500</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="/pricingb" class="svg-icon">
+                            <i class="">
+                                <svg class="svg-icon" id="mm-extra-1-3-1" xmlns="http://www.w3.org/2000/svg"
+                                     width="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none"
+                                     stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                                </svg>
+                            </i><span class="">Pricing</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/inovice" class="svg-icon">
+                            <i class="">
+                                <svg class="svg-icon" id="mm-extra-1-5" xmlns="http://www.w3.org/2000/svg"
+                                     width="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none"
+                                     stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                                    <path
+                                            d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                                    <line x1="9" y1="9" x2="10" y2="9" />
+                                    <line x1="9" y1="13" x2="15" y2="13" />
+                                    <line x1="9" y1="17" x2="15" y2="17" />
+                                </svg>
+                            </i><span class="">Invoice</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/faqback" class="svg-icon">
+                            <i class="">
+                                <svg class="svg-icon" id="mm-extra-1-7" xmlns="http://www.w3.org/2000/svg"
+                                     width="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none"
+                                     stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="M8 16l1.106 -1.99m1.4 -2.522l2.494 -4.488" />
+                                    <path d="M7 14h5m2.9 0h2.1" />
+                                    <path d="M16 16l-2.51 -4.518m-1.487 -2.677l-1.003 -1.805" />
+                                </svg>
+                            </i><span class="">Faq</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/blank" class="svg-icon">
+                            <i class="">
+                                <svg class="svg-icon" id="mm-extra-1-8" xmlns="http://www.w3.org/2000/svg"
+                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z" />
+                                </svg>
+                            </i><span class="">Blank Page</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/main" class="svg-icon">
+                            <i class="">
+                                <svg class="svg-icon" id="mm-extra-1-9" xmlns="http://www.w3.org/2000/svg"
+                                     width="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none"
+                                     stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <circle cx="12" cy="7" r="3" />
+                                    <circle cx="17" cy="16" r="3" />
+                                    <circle cx="7" cy="16" r="3" />
+                                </svg>
+                            </i><span class="">Maintenance</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/cms" class="svg-icon">
+                            <i class="">
+                                <svg class="svg-icon" id="mm-extra-1-10" xmlns="http://www.w3.org/2000/svg"
+                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                                </svg>
+                            </i><span class="">Coming Soon</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            </ul>
+        </nav>
+        <div id="sidebar-bottom" class="position-relative sidebar-bottom">
+            <div class="card bg-primary rounded">
+                <div class="card-body">
+                    <div class="sidebarbottom-content">
+                        <div class="image">
+                            <img src="{{ asset('../assets2/images/layouts/layout-1/side-bkg.png') }}" class="img-fluid"
+                                 alt="side-bkg" />
+                        </div>
+                        <h5 class="mb-3 text-white mt-3">Did you Know ?</h5>
+                        <p class="mb-0 text-white">You can add additional user in your Account's Settings</p>
+                        <button type="button" class="btn btn-dark mt-3">
+                            New Program
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-5 pb-2"></div>
+    </div>
+</div>

@@ -1,0 +1,296 @@
+{% extends 'base.html.twig' %}
+      {% block nav %}
+
+          {% include 'Inc/nav2.html.twig' %}
+
+      {% endblock %}
+
+
+{% block body %}
+    <div class="clearfix"></div>
+
+    <!-- Title Header Start -->
+    <section class="inner-header-title" style="background-image:url(assets/img/banner-10.jpg);">
+        <div class="container">
+            <h1>Employer Profile</h1>
+        </div>
+    </section>
+    <div class="clearfix"></div>
+    <!-- Title Header End -->
+
+    <!-- Candidate Profile Start -->
+    <section class="detail-desc advance-detail-pr gray-bg">
+        <div class="container white-shadow">
+            <div class="row">
+                <div class="detail-pic"><img src="{{ app.user.profilPic }}" class="img" alt="" /><a href="#" class="detail-edit" title="edit"><i class="fa fa-pencil"></i></a></div>
+                <div class="detail-status"><span>Active Now</span></div>
+            </div>
+
+            <div class="row bottom-mrg">
+                <div class="col-md-12 col-sm-12">
+                    <div class="advance-detail detail-desc-caption">
+                        <h4>{{ app.user.nom }}</h4><span class="designation">CEO & Founder</span>
+                        <ul>
+                            <li><strong class="j-view">742</strong>Job Post</li>
+                            <li><strong class="j-applied">570</strong>Job Like</li>
+                            <li><strong class="j-shared">210</strong>Job Shared</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row no-padd">
+                <div class="detail pannel-footer">
+                    <div class="col-md-5 col-sm-5">
+                        <ul class="detail-footer-social">
+                            <li><a href="http://{{ app.user.facebook }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"target="_blank"></i></a></li>
+                            <li><a href="http://{{ app.user.twitter }}"target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="http://{{ app.user.linkdin }}"target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"target="_blank"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-7 col-sm-7">
+                        <div class="detail-pannel-footer-btn pull-right"><a href="{{ path('editE',{'id': app.user.email , 'i': app.user.username }) }}" data-toggle="modal" class="footer-btn grn-btn" title="">Edit Now</a>
+
+                            <a href="{{ path('DeleteE',{'i': app.user.username}) }}" class="footer-btn blu-btn" title="">Delete Account </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="full-detail-description full-detail gray-bg">
+        <div class="container">
+            <div class="col-md-12 col-sm-12">
+                <div class="full-card">
+                    <div class="deatil-tab-employ tool-tab">
+                        <ul class="nav simple nav-tabs" id="simple-design-tab">
+                            <li class="active"><a href="#about">About</a></li>
+                            <li><a href="#address">Entreprise Info</a></li>
+                            <li><a href="#post-job">Job Posted</a></li>
+                        </ul>
+                        <!-- Start All Sec -->
+                        <div class="tab-content">
+                            <!-- Start About Sec -->
+                            <div id="about" class="tab-pane fade in active">
+                                <h3>About {{ app.user.nom }}</h3>
+                                {{ app.user.about }}
+                            </div>
+                            <!-- End About Sec -->
+
+                            <!-- Start Address Sec -->
+                            <div id="address" class="tab-pane fade">
+                                <h3>Entreprise Info</h3>
+                                <ul class="job-detail-des">
+                                    <li><span>Address:</span>{{ app.user.adresse }}</li>
+                                    <li><span>Telephone:</span>{{ app.user.tel }}</li>
+                                    <li><span>Website:</span>{{ app.user.siteweb }}</li>
+                                    <li><span>Email:</span>{{ app.user.email }}</li>
+                                </ul>
+                            </div>
+                            <!-- End Address Sec -->
+
+                            <!-- Start Job List -->
+                            <div id="post-job" class="tab-pane fade">
+                                <h3>You have 22 job post</h3>
+                                <div class="row">
+                                    <article>
+                                        <div class="mng-company">
+                                            <div class="col-md-2 col-sm-2">
+                                                <div class="mng-company-pic"><img src="assets/img/com-1.jpg" class="img-responsive" alt=""></div>
+                                            </div>
+
+                                            <div class="col-md-5 col-sm-5">
+                                                <div class="mng-company-name">
+                                                    <h4>Autodesk <span class="cmp-tagline">(Software Company)</span></h4><span class="cmp-time">10 Hour Ago</span></div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-4">
+                                                <div class="mng-company-location">
+                                                    <p><i class="fa fa-map-marker"></i> Street #210, Make New London</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-1 col-sm-1">
+                                                <div class="mng-company-action"><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-trash-o"></i></a></div>
+                                            </div>
+
+                                        </div>
+                                        <span class="tg-themetag tg-featuretag">Premium</span>
+                                    </article>
+
+                                    <article>
+                                        <div class="mng-company">
+                                            <div class="col-md-2 col-sm-2">
+                                                <div class="mng-company-pic"><img src="assets/img/com-2.jpg" class="img-responsive" alt=""></div>
+                                            </div>
+
+                                            <div class="col-md-5 col-sm-5">
+                                                <div class="mng-company-name">
+                                                    <h4>Google <span class="cmp-tagline">(Software Company)</span></h4><span class="cmp-time">10 Hour Ago</span></div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-4">
+                                                <div class="mng-company-location">
+                                                    <p><i class="fa fa-map-marker"></i> Street #210, Make New London</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-1 col-sm-1">
+                                                <div class="mng-company-action"><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-trash-o"></i></a></div>
+                                            </div>
+
+                                        </div>
+                                    </article>
+
+                                    <article>
+                                        <div class="mng-company">
+                                            <div class="col-md-2 col-sm-2">
+                                                <div class="mng-company-pic"><img src="assets/img/com-3.jpg" class="img-responsive" alt=""></div>
+                                            </div>
+
+                                            <div class="col-md-5 col-sm-5">
+                                                <div class="mng-company-name">
+                                                    <h4>Honda <span class="cmp-tagline">(Motor Agency)</span></h4><span class="cmp-time">10 Hour Ago</span></div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-4">
+                                                <div class="mng-company-location">
+                                                    <p><i class="fa fa-map-marker"></i> Street #210, Make New London</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-1 col-sm-1">
+                                                <div class="mng-company-action"><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-trash-o"></i></a></div>
+                                            </div>
+
+                                        </div>
+                                    </article>
+
+                                    <article>
+                                        <div class="mng-company">
+                                            <div class="col-md-2 col-sm-2">
+                                                <div class="mng-company-pic"><img src="assets/img/com-4.jpg" class="img-responsive" alt=""></div>
+                                            </div>
+
+                                            <div class="col-md-5 col-sm-5">
+                                                <div class="mng-company-name">
+                                                    <h4>Microsoft <span class="cmp-tagline">(Software Company)</span></h4><span class="cmp-time">10 Hour Ago</span></div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-4">
+                                                <div class="mng-company-location">
+                                                    <p><i class="fa fa-map-marker"></i> Street #210, Make New London</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-1 col-sm-1">
+                                                <div class="mng-company-action"><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-trash-o"></i></a></div>
+                                            </div>
+
+                                        </div>
+                                        <span class="tg-themetag tg-featuretag">Premium</span>
+                                    </article>
+
+                                    <article>
+                                        <div class="mng-company">
+                                            <div class="col-md-2 col-sm-2">
+                                                <div class="mng-company-pic"><img src="assets/img/com-5.jpg" class="img-responsive" alt=""></div>
+                                            </div>
+
+                                            <div class="col-md-5 col-sm-5">
+                                                <div class="mng-company-name">
+                                                    <h4>Skype <span class="cmp-tagline">(Software Company)</span></h4><span class="cmp-time">10 Hour Ago</span></div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-4">
+                                                <div class="mng-company-location">
+                                                    <p><i class="fa fa-map-marker"></i> Street #210, Make New London</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-1 col-sm-1">
+                                                <div class="mng-company-action"><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-trash-o"></i></a></div>
+                                            </div>
+
+                                        </div>
+                                    </article>
+
+                                    <article>
+                                        <div class="mng-company">
+                                            <div class="col-md-2 col-sm-2">
+                                                <div class="mng-company-pic"><img src="assets/img/com-6.jpg" class="img-responsive" alt=""></div>
+                                            </div>
+
+                                            <div class="col-md-5 col-sm-5">
+                                                <div class="mng-company-name">
+                                                    <h4>Virtue <span class="cmp-tagline">(Development Company)</span></h4><span class="cmp-time">10 Hour Ago</span></div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-4">
+                                                <div class="mng-company-location">
+                                                    <p><i class="fa fa-map-marker"></i> Street #210, Make New London</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-1 col-sm-1">
+                                                <div class="mng-company-action"><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-trash-o"></i></a></div>
+                                            </div>
+
+                                        </div>
+                                    </article>
+
+                                    <article>
+                                        <div class="mng-company">
+                                            <div class="col-md-2 col-sm-2">
+                                                <div class="mng-company-pic"><img src="assets/img/com-7.jpg" class="img-responsive" alt=""></div>
+                                            </div>
+
+                                            <div class="col-md-5 col-sm-5">
+                                                <div class="mng-company-name">
+                                                    <h4>Twitter <span class="cmp-tagline">(Social Media Company)</span></h4><span class="cmp-time">10 Hour Ago</span></div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-4">
+                                                <div class="mng-company-location">
+                                                    <p><i class="fa fa-map-marker"></i> Street #210, Make New London</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-1 col-sm-1">
+                                                <div class="mng-company-action"><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-trash-o"></i></a></div>
+                                            </div>
+
+                                        </div>
+                                        <span class="tg-themetag tg-featuretag">Premium</span>
+                                    </article>
+                                </div>
+                                <div class="row">
+                                    <ul class="pagination">
+                                        <li><a href="#">«</a></li>
+                                        <li class="active"><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#"><i class="fa fa-ellipsis-h"></i></a></li>
+                                        <li><a href="#">»</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- End Job List -->
+
+
+
+                        </div>
+                        <!-- Start All Sec -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

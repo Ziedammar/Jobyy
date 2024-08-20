@@ -1,0 +1,177 @@
+<footer class="footer">
+    <!--Start of Tawk.to Script-->
+
+
+    <!--End of Tawk.to Script-->
+    <div class="row lg-menu">
+        <div class="container">
+            <div class="col-md-4 col-sm-4"><img src="../../assets/img/footer-logo.png" class="img-responsive" alt=""/>
+            </div>
+            <div class="col-md-8 co-sm-8 pull-right">
+                <ul>
+                    <li><a href="/" title="">Home</a></li>
+                    <li><a href="/blog" title="">Blog</a></li>
+                    <li><a href="/faq" title="">FAQ</a></li>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.type==0 %}
+
+                    <li><a href="{{ path('contact',{'mail': app.user.email,'id':app.user.username}) }}" title="">Contact Us</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/5ead82bb203e206707f8e4be/default';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+    <div class="row no-padding">
+        <div class="container">
+            <div class="col-md-3 col-sm-12">
+                <div class="footer-widget">
+                    <h3 class="widgettitle widget-title">About Jobby</h3>
+
+                    <div class="textwidget">
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+
+                        <p>4015 AV Mourad <br>Esprit, TN 2021</p>
+
+                        <p><strong>Email:</strong> Support@careerdesk</p>
+
+                        <p><strong>Call:</strong> <a href="tel:+21673102506">73-102-506</a></p>
+                        <ul class="footer-social">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="footer-widget">
+                    <h3 class="widgettitle widget-title">All Navigation</h3>
+
+                    <div class="textwidget">
+                        <div class="textwidget">
+                            <ul class="footer-navigation">
+                                <li><a href="/manage-company" title="">Front-end Design</a></li>
+                                <li><a href="/manage-company" title="">Android Developer</a></li>
+                                <li><a href="/manage-company" title="">CMS Development</a></li>
+                                <li><a href="/manage-company" title="">PHP Development</a></li>
+                                <li><a href="/manage-company" title="">IOS Developer</a></li>
+                                <li><a href="/manage-company" title="">Iphone Developer</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="footer-widget">
+                    <h3 class="widgettitle widget-title">All Categories</h3>
+
+                    <div class="textwidget">
+                        <ul class="footer-navigation">
+                            <li><a href="/manage-company" title="">Front-end Design</a></li>
+                            <li><a href="/manage-company" title="">Android Developer</a></li>
+                            <li><a href="/manage-company" title="">CMS Development</a></li>
+                            <li><a href="/manage-company" title="">PHP Development</a></li>
+                            <li><a href="/manage-company" title="">IOS Developer</a></li>
+                            <li><a href="/manage-company" title="">Iphone Developer</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="footer-widget">
+                    <h3 class="widgettitle widget-title">Connect Us</h3>
+
+                    <div class="textwidget">
+                        <form class="footer-form"><input type="text" class="form-control" placeholder="Your Name">
+                            <input type="text" class="form-control" placeholder="Email"><textarea
+                                    class="form-control" placeholder="Message"></textarea>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row copyright">
+        <div class="container">
+            <p><a target="_blank" >© Ingenious 2021 </a></p>
+        </div>
+    </div>
+</footer>
+<div class="clearfix"></div>
+<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="tab" role="tabpanel">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#login" role="tab" data-toggle="tab">Sign
+                                In</a></li>
+                        <li role="presentation"><a href="#register" role="tab" data-toggle="tab">Sign Up</a></li>
+                    </ul>
+                    <div class="tab-content" id="myModalLabel2">
+                        <div role="tabpanel" class="tab-pane fade in active" id="login">
+                            <img src="assets/img/logo.png" class="img-responsive" alt=""/>
+
+                            <div class="subscribe wow fadeInUp">
+                                <form class="form-inline" method="post">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <input type="email" name="email" class="form-control"
+                                                   placeholder="Username" required=""><input type="password"
+                                                                                             name="password"
+                                                                                             class="form-control"
+                                                                                             placeholder="Password"
+                                                                                             required="">
+
+                                            <div class="center">
+                                                <button type="submit" id="login-btn" class="submit-btn"> Login
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="register">
+                            <img src="assets/img/logo.png" class="img-responsive" alt=""/>
+
+                            <form class="form-inline" method="post">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <input type="text" name="email" class="form-control" placeholder="Your Name"
+                                               required=""><input type="email" name="email" class="form-control"
+                                                                  placeholder="Your Email" required=""><input
+                                                type="email" name="email" class="form-control" placeholder="Username"
+                                                required=""><input type="password" name="password" class="form-control"
+                                                                   placeholder="Password" required="">
+
+                                        <div class="center">
+                                            <button type="submit" id="subscribe" class="submit-btn"> Create
+                                                Account
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

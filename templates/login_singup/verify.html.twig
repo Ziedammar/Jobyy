@@ -1,0 +1,39 @@
+<head>
+    <title>Jobby</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="{{ asset("assets/plugins/css/plugins.css") }}">
+    <link href="{{ asset("assets/css/style.css") }}" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" id="jssDefault" href="{{ asset("assets/css/colors/blue-style.css") }}">
+    <link rel = "shortcut icon" href ="{{ asset("assets/img/icon.png") }}" type ="image/x-icon">
+    <style>
+        .error{
+            color : red
+        }
+    </style>
+
+</head>
+<body class="simple-bg-screen" style="background-image:url(assets/img/banner-10.jpg);">
+<div class="Loader"></div>
+<div class="wrapper">
+
+    <!-- Title Header Start -->
+    <section class="login-screen-sec">
+        <div class="container">
+            <div class="login-screen">
+                <a href="/"><img src="assets/img/logo.png" class="img-responsive" alt=""></a>
+                <form action="{{ path('verify') }}" method="POST">
+                    {% for message in app.flashes('warning') %}
+                        <span class="error">{{ message }}</span>
+                    {% endfor %}
+                    <input type="Email" name="email" id="email" class="form-control" placeholder="Your email">
+                    <input type="text" name="token"  id="token" class="form-control" placeholder="Your Verification Token">
+                    <button class="btn btn-login" type="submit">Verify</button>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+</div>
+</body>

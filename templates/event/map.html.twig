@@ -1,0 +1,48 @@
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<style type="text/css">
+    /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+    #map {
+        height: 100%;
+    }
+
+    /* Optional: Makes the sample page fill the window. */
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<script>
+    "use strict";
+
+    var map;
+
+    function initMap() {
+        const uluru = { lat:{{ maps.getLatitude() }}, lng:{{ maps.getLongitude() }} };
+        map = new google.maps.Map(document.getElementById("map"), {
+
+
+                zoom: 8,
+                center: uluru,
+
+
+        });
+        const marker = new google.maps.Marker({
+            position: uluru,
+            map: map,
+        });
+
+    }
+</script>
+
+<div id="iframe-contents">
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUC1N2uSaXiOLOncQ8B9xs7vtVYNg4_WE&callback=initMap&libraries=&v=weekly"
+            async
+    ></script>
+</div>

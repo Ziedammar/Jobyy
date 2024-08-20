@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title>{% block title %}Jobby Conference Room{% endblock %}</title>
+
+    {% block javascripts %}
+        <script src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+    {% endblock %}
+    {% block stylesheets %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+        <!-- CSS==================================================-->
+        <link rel="stylesheet" href="{{ asset("../../assets/plugins/css/plugins.css") }}">
+        <link href="{{ asset("../../assets/css/style.css") }}" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" id="jssDefault" href="{{ asset("../../assets/css/colors/blue-style.css") }}">
+        <link rel = "shortcut icon" href ="{{ asset("../../assets/img/icon.png") }}" type ="image/x-icon">
+    <style>
+        body {
+            background: #0098ff;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            align-items: center;
+            justify-content: center;
+            padding: 0 50px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        video {
+            max-width: calc(50% - 100px);
+            margin: 0 50px;
+            box-sizing: border-box;
+            border-radius: 2px;
+            padding: 0;
+            background: white;
+        }
+        .copy {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+            color: white;
+        }
+        .btn-success
+        {
+        position:relative;  top:200px;
+        }
+    </style>
+    {% endblock %}
+
+</head>
+<body>
+{% block body %}
+<div class="copy"> Currently in conference </div>
+<video id="localVideo" autoplay muted></video>
+<video id="remoteVideo" autoplay></video>
+    <form action="{{ path('conf') }}" method="post">
+        <input type="hidden" id="url" name="url">
+        <center><button type="submit" class="btn-success">Send Link</button></center>
+    </form>
+    <center><a href="/codeex" class="btn-success">Test your coding skills!</a></center>
+
+
+    <script src="assets/js/script.js"></script>
+    <script type="text/javascript" src="../../assets/plugins/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../assets/plugins/js/viewportchecker.js"></script>
+    <script type="text/javascript" src="../../assets/plugins/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../assets/plugins/js/bootsnav.js"></script>
+    <script type="text/javascript" src="../../assets/plugins/js/select2.min.js"></script>
+    <script type="text/javascript" src="../../assets/plugins/js/wysihtml5-0.3.0.js"></script>
+    <script type="text/javascript" src="../../assets/plugins/js/bootstrap-wysihtml5.js"></script>
+    <script type="text/javascript" src="../../assets/plugins/js/datedropper.min.js"></script>
+    <script type="text/javascript" src="../../assets/plugins/js/dropzone.js"></script>
+    <script type="text/javascript" src="../../assets/plugins/js/loader.js"></script>
+    <script type="text/javascript" src="../../assets/plugins/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="../../assets/plugins/js/slick.min.js"></script>
+    <script type="text/javascript" src="../../assets/plugins/js/gmap3.min.js"></script>
+    <script type="text/javascript" src="../../assets/plugins/js/jquery.easy-autocomplete.min.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    <script src="../../assets/js/jQuery.style.switcher.js"></script>
+{% endblock %}
+
+
+</body>
+</html>

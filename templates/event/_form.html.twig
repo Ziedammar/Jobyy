@@ -1,0 +1,57 @@
+<!-- Start Settings -->
+{% block body %}
+    <div class="clearfix"></div>
+
+    <!-- Title Header Start -->
+    <section class="inner-header-title" style="background-image:url(../assets/img/banner-10.jpg);">
+        <div class="container">
+            <h1>Edit</h1>
+        </div>
+    </section>
+        <h3>Edit Profile</h3>
+        <div class="edit-pro">
+            {{ form_start(form,{'attr':{'novalidate':'novalidate'}}) }}
+
+            <div class="col-md-4 col-sm-6">
+                {{ form_row(form.nbr) }}
+                <div  class="alert alert-danger">
+                    {{ form_errors(form.nbr) }}
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                {{ form_row(form.date) }}
+                <div  class="alert alert-danger">
+                    {{ form_errors(form.date) }}
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                {{ form_row(form.categorie) }}
+                <div  class="alert alert-danger">
+                    {{ form_errors(form.categorie) }}
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                {{ form_row(form.nom) }}
+                <div  class="alert alert-danger">
+                    {{ form_errors(form.nom) }}
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                {{ form_row(form.description) }}
+                <div  class="alert alert-danger">
+                    {{ form_errors(form.description) }}
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                {{ form_row(form.image) }}
+            </div>
+            <div class="col-sm-12">
+                <button type="submit" class="update-btn">Save</button>
+
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+{% endblock %}
+<!-- End Settings -->

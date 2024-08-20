@@ -1,0 +1,54 @@
+{% for formation in formations %}
+    {% if formation.status==0%}
+        <div class="col-md-4 col-sm-6">
+            <div class="freelance-container">
+                <div class="freelance-box">
+                    <span class="freelance-status">Available</span>
+                    <h4 class="flc-rate">{{ formation.prix }} $</h4>
+                    <div class="freelance-inner-box">
+                        <div class="freelance-box-thumb">
+                            <img src="{{ asset('uploads/'~ formation.image) }}" style="width:100%" ></td>
+                        </div>
+                        <div class="freelance-box-detail">
+                            <h4>{{ formation.nom }}</h4>
+                            <span class="desination"></span>
+                        </div>
+                    </div>
+                    <div class="freelance-box-extra">
+                        <ul>
+                            <li>{{ formation.date|date('Y-m-d') }}</li>
+                            <li class="more-skill bg-primary">{{ formation.secteur }}</li>
+                        </ul>
+                        <p>{{ formation.description }}</p>
+                    </div>
+                    <div class="freelance-box-extra">
+                        <a class="btn btn-link js-like" href="{{ path('forma_like',{'id':formation.id}) }}">
+                            {% if app.user and formation.islikedbyUser(app.user) %}
+                                <i class="fas fa-thumbs-up"  style="width:35px" ></i>
+                            {% else %}
+                                <i class="far fa-thumbs-up"  style="width:35px" ></i>
+                            {% endif %}
+                            <span class="js-likes">{{ formation.likes |length }}</span>
+                            <span class="js-label">like</span>
+                        </a>
+
+
+                        <a class="btn btn-link js-dislike" href="{{ path('forma_dislike',{'id':formation.id}) }}">
+                            {% if app.user and formation.isdislikedbyUser(app.user) %}
+                                <i class="fas fa-thumbs-down"  style="width:35px" ></i>
+                            {% else %}
+                                <i class="far fa-thumbs-down"  style="width:35px" ></i>
+                            {% endif %}
+                            <span class="js-dislikes">{{ formation.dislikes |length }}</span>
+                            <span class="js-label">dislike</span>
+                        </a>
+
+                    </div>
+                </div>
+                <a href="{{ path("forma", {"id": formation.id}) }}"  class="btn btn-freelance bt-1">View Detail</a>
+            </div>
+        </div>
+    {% else %}
+    {% endif %}
+
+{% endfor %}

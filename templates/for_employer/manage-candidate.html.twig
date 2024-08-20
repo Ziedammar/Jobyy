@@ -1,0 +1,165 @@
+{% extends 'base.html.twig' %}
+      {% block nav %}
+
+		  {% include 'Inc/nav2.html.twig' %}
+
+	  {% endblock %}
+
+
+{% block body %}
+<!-- End Navigation -->
+			<div class="clearfix"></div>
+			
+			<!-- Title Header Start -->
+			<section class="inner-header-title" style="background-image:url(../../assets/img/banner-10.jpg);">
+				<div class="container">
+					<h1>Manage Candidate</h1>
+				</div>
+			</section>
+			<div class="clearfix"></div>
+			<!-- Title Header End -->
+			
+			<!-- Member list start -->
+			<section class="member-card gray">
+				<div class="container">
+				
+					<!-- search filter -->
+					<div class="row">
+						<div class="col-md-12 col-sm-12">
+							<div class="search-filter">
+							
+								<div class="col-md-4 col-sm-5">
+									<div class="filter-form">
+										<form action="{{ path('search-result') }}" method="post">
+										<div class="input-group">
+
+											<input type="text" class="form-control" name="search" id="search" placeholder="Search…">
+											<span class="input-group-btn">
+												<button type="submit" class="btn btn-default">Go</button>
+											</span>
+
+										</div>
+										</form>
+									</div>
+								</div>
+
+                                <div class="col-md-8 col-sm-7">
+                                    <div class="short-by pull-right">
+
+                                        <div class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sort By <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="{{ path('manage-candidate-up') }}">Sort By Names ↑</a></li>
+                                                <li><a href="{{ path('manage-candidate-down') }}">Sort By Names ↓</a></li>
+
+                                            </ul>
+
+                                        </div>
+
+
+                                </div>
+
+								
+							</div>
+						</div>
+					</div>
+					<!-- search filter End -->
+
+					<div class="row">
+						{% for user in users %}
+						<div class="col-md-4 col-sm-4">
+							<div class="manage-cndt">
+								<div class="cndt-status available">Available</div>
+								<div class="cndt-caption">
+									<div class="cndt-pic">
+										<img src="../../{{ user.profilePic }}" class="img-responsive" alt="" />
+									</div>
+									<h4>{{ user.nom }} {{ user.prenom }}</h4>
+									<span>{{ user.email }} <br> {{ user.tel }}</span>
+									<p>{{ user.AboutYou }}</p>
+								</div>
+								<a href="{{ path('candidate-details',{'id':user.username}) }}" title="" class="cndt-profile-btn">View Profile</a>
+							</div>
+						</div>
+						{% endfor %}
+						
+
+
+
+
+
+					</div>
+					
+					<div class="row">
+						<ul class="pagination">
+							<li><a href="#">&laquo;</a></li>
+							<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li> 
+							<li><a href="#">4</a></li> 
+							<li><a href="#"><i class="fa fa-ellipsis-h"></i></a></li> 
+							<li><a href="#">&raquo;</a></li> 
+						</ul>
+					</div>
+					
+				</div>
+			</section>
+			<!-- Member List End -->
+
+			<!-- Sign Up Window Code -->
+			<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="tab" role="tabpanel">
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" class="active"><a href="#login" role="tab" data-toggle="tab">Sign In</a></li>
+								<li role="presentation"><a href="#register" role="tab" data-toggle="tab">Sign Up</a></li>
+							</ul>
+							<!-- Tab panes -->
+							<div class="tab-content" id="myModalLabel2">
+								<div role="tabpanel" class="tab-pane fade in active" id="login">
+									<img src="assets/img/logo.png" class="img-responsive" alt="" />
+									<div class="subscribe wow fadeInUp">
+										<form class="form-inline" method="post">
+											<div class="col-sm-12">
+												<div class="form-group">
+													<input type="email"  name="email" class="form-control" placeholder="Username" required="">
+													<input type="password" name="password" class="form-control"  placeholder="Password" required="">
+													<div class="center">
+													<button type="submit" id="login-btn" class="submit-btn"> Login </button>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+
+								<div role="tabpanel" class="tab-pane fade" id="register">
+								<img src="assets/img/logo.png" class="img-responsive" alt="" />
+									<form class="form-inline" method="post">
+											<div class="col-sm-12">
+												<div class="form-group">
+													<input type="text"  name="email" class="form-control" placeholder="Your Name" required="">
+													<input type="email"  name="email" class="form-control" placeholder="Your Email" required="">
+													<input type="email"  name="email" class="form-control" placeholder="Username" required="">
+													<input type="password" name="password" class="form-control"  placeholder="Password" required="">
+													<div class="center">
+													<button type="submit" id="subscribe" class="submit-btn"> Create Account </button>
+													</div>
+												</div>
+											</div>
+										</form>
+								</div>
+							</div>
+							</div>
+						</div>
+						</div>
+				</div>
+			</div>   
+			<!-- End Sign Up Window -->
+
+		</div>
+
+{% endblock %}

@@ -1,0 +1,385 @@
+{% extends 'base.html.twig' %}
+      {% block nav %}
+
+		  {% include 'Inc/nav2.html.twig' %}
+
+	  {% endblock %}
+
+
+{% block body %}			<div class="clearfix"></div>
+			
+			<!-- Title Header Start -->
+			<section class="inner-header-title" style="background-image:url(assets/img/banner-10.jpg);">
+				<div class="container">
+					<h1>Browse Company</h1>
+				</div>
+			</section>
+			<div class="clearfix"></div>
+			<!-- Title Header End -->
+			
+			
+			
+			<!-- Browse Company List Start -->
+			<section class="browse-company">
+				<div class="container">
+				
+					<!-- Company Searrch Filter Start -->
+					<div class="row extra-mrg">
+						<div class="wrap-search-filter">
+							<form>
+								<div class="col-md-4 col-sm-4">
+									<input type="text" class="form-control" placeholder="Keyword: Name, Tag">
+								</div>
+								<div class="col-md-3 col-sm-3">
+									<input type="text" class="form-control" placeholder="Location: City, State, Zip">
+								</div>
+								<div class="col-md-3 col-sm-3">
+									<select class="selectpicker form-control" multiple title="All Categories">
+									  <option>Information Technology</option>
+									  <option>Mechanical</option>
+									  <option>Hardware</option>
+									</select>
+
+								</div>
+								<div class="col-md-2 col-sm-2">
+									<button type="submit" class="btn btn-success full-width">Filter</button>
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- Company Searrch Filter End -->
+					
+					<!-- Single Browse Company -->
+					<div class="item-click">
+						<article>
+							<div class="brows-company">
+								<div class="col-md-2 col-sm-2">
+									<div class="brows-company-pic">
+										<img src="assets/img/com-1.jpg" class="img-responsive" alt="" />
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="brows-company-name">
+										<a href="/company-detail"><h4>AutoDesk</h4></a>
+										<span class="brows-company-tagline">Software Company</span>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="brows-company-location">
+										<p><i class="fa fa-map-marker"></i> FALBROOK NSW 2330</p>
+									</div>
+								</div>
+								<div class="col-md-2 col-sm-2">
+									<div class="brows-company-position">
+										<p>10 Opening</p>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					
+					<!-- Single Browse Company -->
+					<div class="item-click">
+						<article>
+							<div class="brows-company">
+								<div class="col-md-2 col-sm-2">
+									<div class="brows-company-pic">
+										<a href="/company-detail"><img src="assets/img/com-2.jpg" class="img-responsive" alt="" /></a>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="brows-company-name">
+										<a href="/company-detail"><h4>Google</h4></a></a>
+										<span class="brows-company-tagline">Software Company</span>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="brows-company-location">
+										<p><i class="fa fa-map-marker"></i> Street #210, Make New London</p>
+									</div>
+								</div>
+								<div class="col-md-2 col-sm-2">
+									<div class="brows-company-position">
+										<p>6 Opening</p>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					
+					<!-- Single Browse Company -->
+					<div class="item-click">
+						<article>
+							<div class="brows-company">
+								<div class="col-md-2 col-sm-2">
+									<div class="brows-company-pic">
+										<a href="/company-detail"><img src="assets/img/com-3.jpg" class="img-responsive" alt="" /></a>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="brows-company-name">
+										<a href="/company-detail"><h4>Honda</h4></a>
+										<span class="brows-company-tagline">Motor Agency</span>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="brows-company-location">
+										<p><i class="fa fa-map-marker"></i> BULLAROOK VIC 3352</p>
+									</div>
+								</div>
+								<div class="col-md-2 col-sm-2">
+									<div class="brows-company-position">
+										<p>7 Opening</p>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					
+					<!-- Single Browse Company -->
+					<div class="item-click">
+						<article>
+							<div class="brows-company">
+								<div class="col-md-2 col-sm-2">
+									<div class="brows-company-pic">
+										<a href="/company-detail"><img src="assets/img/com-4.jpg" class="img-responsive" alt="" /></a>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="brows-company-name">
+										<a href="/company-detail"><h4>Microsoft</h4></a>
+										<span class="brows-company-tagline">Software Company</span>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="brows-company-location">
+										<p><i class="fa fa-map-marker"></i> Street #210, Make New London</p>
+									</div>
+								</div>
+								<div class="col-md-2 col-sm-2">
+									<div class="brows-company-position">
+										<p>10 Opening</p>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					
+					<!-- Single Browse Company -->
+					<div class="item-click">
+						<article>
+							<div class="brows-company">
+								<div class="col-md-2 col-sm-2">
+									<div class="brows-company-pic">
+										<a href="/company-detail"><img src="assets/img/com-1.jpg" class="img-responsive" alt="" /></a>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="brows-company-name">
+										<a href="/company-detail"><h4>Skype</h4></a>
+										<span class="brows-company-tagline">Software Company</span>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="brows-company-location">
+										<p><i class="fa fa-map-marker"></i> NUNJIKOMPITA SA 5680</p>
+									</div>
+								</div>
+								<div class="col-md-2 col-sm-2">
+									<div class="brows-company-position">
+										<p>04 Opening</p>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					
+					<!-- Single Browse Company -->
+					<div class="item-click">
+						<article>
+							<div class="brows-company">
+								<div class="col-md-2 col-sm-2">
+									<div class="brows-company-pic">
+										<a href="/company-detail"><img src="assets/img/com-2.jpg" class="img-responsive" alt="" /></a>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="brows-company-name">
+										<a href="/company-detail"><h4>Virtue</h4></a>
+										<span class="brows-company-tagline">Software Company</span>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="brows-company-location">
+										<p><i class="fa fa-map-marker"></i> JANNALI NSW 2226</p>
+									</div>
+								</div>
+								<div class="col-md-2 col-sm-2">
+									<div class="brows-company-position">
+										<p>02 Opening</p>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					
+					<!-- Single Browse Company -->
+					<div class="item-click">
+						<article>
+							<div class="brows-company">
+								<div class="col-md-2 col-sm-2">
+									<div class="brows-company-pic">
+										<a href="/company-detail"><img src="assets/img/com-6.jpg" class="img-responsive" alt="" /></a>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="brows-company-name">
+										<a href="/company-detail"><h4>Twitter</h4></a>
+										<span class="brows-company-tagline">Software Company</span>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="brows-company-location">
+										<p><i class="fa fa-map-marker"></i> BOLIVIA NSW 2372</p>
+									</div>
+								</div>
+								<div class="col-md-2 col-sm-2">
+									<div class="brows-company-position">
+										<p>05 Opening</p>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					
+					<!-- Single Browse Company -->
+					<div class="item-click">
+						<article>
+							<div class="brows-company">
+								<div class="col-md-2 col-sm-2">
+									<div class="brows-company-pic">
+										<a href="/company-detail"><img src="assets/img/com-7.jpg" class="img-responsive" alt="" /></a>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="brows-company-name">
+										<a href="/company-detail"><h4>Autodesk</h4></a>
+										<span class="brows-company-tagline">Software Company</span>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="brows-company-location">
+										<p><i class="fa fa-map-marker"></i> SUNDOWN QLD 4860</p>
+									</div>
+								</div>
+								<div class="col-md-2 col-sm-2">
+									<div class="brows-company-position">
+										<p>6 Opening</p>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					
+					<!-- Single Browse Company -->
+					<div class="item-click">
+						<article>
+							<div class="brows-company">
+								<div class="col-md-2 col-sm-2">
+									<div class="brows-company-pic">
+										<a href="/company-detail"><img src="assets/img/com-2.jpg" class="img-responsive" alt="" /></a>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="brows-company-name">
+										<a href="/company-detail"><h4>Google</h4></a>
+										<span class="brows-company-tagline">Software Company</span>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="brows-company-location">
+										<p><i class="fa fa-map-marker"></i> Street #210, Make New London</p>
+									</div>
+								</div>
+								<div class="col-md-2 col-sm-2">
+									<div class="brows-company-position">
+										<p>6 Opening</p>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					
+					<div class="row">
+						<ul class="pagination">
+							<li><a href="#">&laquo;</a></li>
+							<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li> 
+							<li><a href="#">4</a></li> 
+							<li><a href="#"><i class="fa fa-ellipsis-h"></i></a></li> 
+							<li><a href="#">&raquo;</a></li> 
+						</ul>
+					</div>
+					
+				</div>
+			</section>
+			<!-- Browse Company List End -->
+			
+
+			<!-- Sign Up Window Code -->
+			<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="tab" role="tabpanel">
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" class="active"><a href="#login" role="tab" data-toggle="tab">Sign In</a></li>
+								<li role="presentation"><a href="#register" role="tab" data-toggle="tab">Sign Up</a></li>
+							</ul>
+							<!-- Tab panes -->
+							<div class="tab-content" id="myModalLabel2">
+								<div role="tabpanel" class="tab-pane fade in active" id="login">
+									<img src="assets/img/logo.png" class="img-responsive" alt="" />
+									<div class="subscribe wow fadeInUp">
+										<form class="form-inline" method="post">
+											<div class="col-sm-12">
+												<div class="form-group">
+													<input type="email"  name="email" class="form-control" placeholder="Username" required="">
+													<input type="password" name="password" class="form-control"  placeholder="Password" required="">
+													<div class="center">
+													<button type="submit" id="login-btn" class="submit-btn"> Login </button>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+
+								<div role="tabpanel" class="tab-pane fade" id="register">
+								<img src="assets/img/logo.png" class="img-responsive" alt="" />
+									<form class="form-inline" method="post">
+											<div class="col-sm-12">
+												<div class="form-group">
+													<input type="text"  name="email" class="form-control" placeholder="Your Name" required="">
+													<input type="email"  name="email" class="form-control" placeholder="Your Email" required="">
+													<input type="email"  name="email" class="form-control" placeholder="Your Email" required="">
+													<input type="email"  name="email" class="form-control" placeholder="Username" required="">
+													<input type="password" name="password" class="form-control"  placeholder="Password" required="">
+													<div class="center">
+													<button type="submit" id="subscribe" class="submit-btn"> Create Account </button>
+													</div>
+												</div>
+											</div>
+										</form>
+								</div>
+							</div>
+							</div>
+						</div>
+						</div>
+				</div>
+			</div>   
+			<!-- End Sign Up Window -->
+
+{% endblock %}

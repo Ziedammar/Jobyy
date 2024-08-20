@@ -1,0 +1,131 @@
+{% extends 'base.html.twig' %}
+      {% block nav %}
+
+		  {% include 'Inc/nav2.html.twig' %}
+
+	  {% endblock %}
+
+
+{% block body %}
+			<div class="clearfix"></div>
+			
+			<!-- Title Header Start -->
+			<section class="inner-header-title" style="background-image:url(../../assets/img/banner-10.jpg);">
+				<div class="container">
+					<h1>Contact Page</h1>
+				</div>
+			</section>
+			<div class="clearfix"></div>
+			<!-- Title Header End -->
+			
+			<!-- Contact Page Section Start -->
+			<section class="contact-page">
+				<div class="container">
+				<h2>Drop A Claim</h2>
+				
+					<div class="col-md-4 col-sm-4">
+						<div class="contact-box">
+							<i class="fa fa-map-marker"></i>
+							<p>#21, Av 14 Janvier<br> Sousse (4020)</p>
+						</div>
+					</div>
+					
+					<div class="col-md-4 col-sm-4">
+						<div class="contact-box">
+							<i class="fa fa-envelope"></i>
+							<p>contact@jobby.com</p>
+						</div>
+					</div>
+					
+					<div class="col-md-4 col-sm-4">
+						<div class="contact-box">
+							<i class="fa fa-phone"></i>
+							<p>TN: 73188921<br>Int: +216 73188920</p>
+						</div>
+					</div>
+					
+				</div>
+			</section>
+			<!-- contact section End -->
+			
+			<!-- contact form -->
+			<section class="contact-form">
+				<div class="container">
+					<h2>Drop A Claim</h2>
+
+					{{ form_start(form) }}
+					{{ form_row(form.user_id,{ 'label':' ' , 'type': 'hidden' , 'value': '1'}) }}
+					{{ form_row(form.user_email,{ 'label':' ' , 'type': 'hidden' , 'value': 'test@ty.com'}) }}
+					<div class="col-md-6 col-sm-6">
+						{{ form_row(form.subject) }}
+   					</div>
+					
+					<div class="col-md-12 col-sm-12">
+						{{ form_row(form.claim) }}
+					</div>
+					
+					<div class="col-md-12 col-sm-12">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+					{{ form_end(form) }}
+				</div>
+			</section>
+			<!-- Contact form End -->
+			
+
+			<!-- Sign Up Window Code -->
+			<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="tab" role="tabpanel">
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" class="active"><a href="#login" role="tab" data-toggle="tab">Sign In</a></li>
+								<li role="presentation"><a href="#register" role="tab" data-toggle="tab">Sign Up</a></li>
+							</ul>
+							<!-- Tab panes -->
+							<div class="tab-content" id="myModalLabel2">
+								<div role="tabpanel" class="tab-pane fade in active" id="login">
+									<img src="assets/img/logo.png" class="img-responsive" alt="" />
+									<div class="subscribe wow fadeInUp">
+										<form class="form-inline" method="post">
+											<div class="col-sm-12">
+												<div class="form-group">
+													<input type="email"  name="email" class="form-control" placeholder="Username" required="">
+													<input type="password" name="password" class="form-control"  placeholder="Password" required="">
+													<div class="center">
+													<button type="submit" id="login-btn" class="submit-btn"> Login </button>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+
+								<div role="tabpanel" class="tab-pane fade" id="register">
+								<img src="assets/img/logo.png" class="img-responsive" alt="" />
+									<form class="form-inline" method="post">
+											<div class="col-sm-12">
+												<div class="form-group">
+													<input type="text"  name="email" class="form-control" placeholder="Your Name" required="">
+													<input type="email"  name="email" class="form-control" placeholder="Your Email" required="">
+													<input type="email"  name="email" class="form-control" placeholder="Username" required="">
+													<input type="password" name="password" class="form-control"  placeholder="Password" required="">
+													<div class="center">
+													<button type="submit" id="subscribe" class="submit-btn"> Create Account </button>
+													</div>
+												</div>
+											</div>
+										</form>
+								</div>
+							</div>
+							</div>
+						</div>
+						</div>
+				</div>
+			</div>   
+			<!-- End Sign Up Window -->
+
+		</div>
+ {% endblock %}

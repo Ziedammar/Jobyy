@@ -1,0 +1,47 @@
+<style>
+    img {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 150px;
+    }
+
+</style>
+{% block body %}
+
+
+
+                                <table id="datatable" class="table data-table table-striped table-bordered" >
+                                    <thead>
+                                    <tr>
+                                        <th>Id</th>
+
+                                        <th>Nbr</th>
+                                        <th>Date</th>
+                                        <th>Description</th>
+                                        <th>Image</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for event in events %}
+                                    <tr>
+                                        <td>{{ event.id }}</td>
+
+                                        <td>{{ event.nbr }}</td>
+                                        <td>{{ event.date ? event.date|date('Y-m-d') : '' }}</td>
+                                        <td>{{ event.description }}</td>
+                                        <td><img src="../../{{ event.image }}"></td>
+
+
+                                    </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+
+
+
+
+
+
+{% endblock %}

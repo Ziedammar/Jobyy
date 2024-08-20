@@ -1,0 +1,77 @@
+
+
+
+{% extends 'admin/base.html.twig' %}
+{% block nav %}
+    {% include 'admin/include/navbar.html.twig' %}
+{% endblock %}
+{% block sidebar %}
+    {% include 'admin/include/sidebar.html.twig' %}
+{% endblock %}
+
+
+{% block body %}
+
+
+
+
+
+
+
+
+
+
+    <div class="content-page">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-xl-9 col-lg-8">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h4 class="card-title">New Formation</h4>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="new-user-info">
+                                {{ form_start(form,{'attr':{'novalidate':'novalidate'}}) }}
+                                    <div class="row">
+                                        <div class="form-group col-md-6">
+                                            {{ form_row(form.nom, {"attr" : {'class':'form-control'},"label":"Nom Formation"})}}
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            {{ form_row(form.prix, {"attr" : {'class':'form-control'},"label":"Prix Formation"})}}
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            {{ form_row(form.description, {"attr" : {'class':'form-control'},"label":"Description Formation"})}}
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            {{ form_row(form.secteur, {"attr" : {'class':'form-control'},"label":"Secteur Formation"})}}
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            {{ form_row(form.date, {"attr" :{"label":"Date Formation"}})}}
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            {{ form_row(form.datefin, {"attr" :{"label":"Date Formation"}})}}
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            {{ form_row(form.idcategorie, {"attr" : {'class':'form-control'} ,"label":"Categorie Formation"})}}
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            {{ form_row(form.image, {"attr" : {'class':'form-control'} ,"label":"Image Formation"})}}
+                                        </div>
+
+                                    </div>
+                                    <hr>
+
+                                    <button type="submit" class="btn btn-primary">Add Formation</button>
+                                {{ form_end(form) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

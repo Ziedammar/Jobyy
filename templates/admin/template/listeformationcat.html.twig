@@ -1,0 +1,66 @@
+{% extends 'admin/base.html.twig' %}
+{% block nav %}
+    {% include 'admin/include/navbar.html.twig' %}
+{% endblock %}
+{% block sidebar %}
+    {% include 'admin/include/sidebar.html.twig' %}
+{% endblock %}
+
+
+{% block body %}
+
+
+
+
+    <div class="content-page">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h4 class="card-title">Liste Des Fomation De La Categorie : {{ c.nom| upper }}</h4>
+                            </div>
+
+                        </div>
+                        <div class="card-body">
+                            <div class="collapse" id="datatable-1">
+                                <div class="card"><kbd class="bg-dark"><pre id="bootstrap-datatables" class="text-white"><code>
+
+                                </code></pre></kbd></div>
+                            </div>
+                            <div class="table-responsive">
+                                <table id="datatable" class="table data-table table-striped table-bordered" >
+                                    <thead>
+                                    <tr>
+                                        <th>Nom </th>
+                                        <th>Prix</th>
+                                        <th>Description </th>
+                                        <th>Secteur</th>
+                                        <th>Date </th>
+
+                                    </tr>
+                                    </thead>
+                                    {% for f in formations %}
+                                        <tr>
+                                            <td>{{ f.nom }}</td>
+                                            <td>{{ f.prix }}</td>
+                                            <td>{{ f.description }}</td>
+                                            <td>{{ f.secteur }}</td>
+                                            <td>{{ f.date|date('Y-m-d') }}</td>
+
+                                        </tr>
+                                    {% endfor %}
+
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

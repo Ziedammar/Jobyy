@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+      {% block nav %}
+
+          {% include 'Inc/nav2.html.twig' %}
+
+      {% endblock %}
+
+
+{% block body %}
+    <!-- End Navigation -->
+    <div class="clearfix"></div>
+
+    <!-- Title Header Start -->
+    <section class="inner-header-title" style="background-image:url(../../assets/img/banner-5.jpg)" >
+        <div class="container">
+
+            <h1> Formation</h1>
+        </div>
+    </section>
+    <div class="clearfix"></div>
+
+
+
+    <!-- Title Header End -->
+		
+		<!-- Candidate Profile Start -->
+        <section class="detail-desc advance-detail-pr gray-bg">
+            <div class="container white-shadow">
+                <div class="row">
+                    <div class="detail-pic"><img src="{{ asset("uploads/"~ formation.image )}}" class="" alt="" /><a href="#" class="detail-edit" title="edit"><i class="fa fa-pencil"></i></a></div>
+                    <div class="detail-status"><span>{{formation.prix  }}</span></div>
+                </div>
+				
+                <div class="row bottom-mrg">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="advance-detail detail-desc-caption">
+                            <h4>{{ formation.nom }}</h4><span class="designation">{{ formation.description }}</span>
+                            <ul>
+                                <li><strong class="j-view">{{ formation.secteur }}</strong> Secteur</li>
+                                <li><strong class="j-applied">{{ formation.date | date('Y-m-d')}}</strong> Date</li>
+                                <li><strong class="j-shared">{{ formation.prix }} $</strong>Prix</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+				
+                <div class="row no-padd">
+                    <div class="detail pannel-footer">
+                        <div class="col-md-5 col-sm-5">
+                            <ul class="detail-footer-social">
+                            </ul>
+                        </div>
+                        <div class="col-md-7 col-sm-7">
+                            <div class="detail-pannel-footer-btn pull-right">
+                                <a href="{{ path('forma_modif',{"id":formation.id}) }}" class="footer-btn bg-danger" title="">Edit Now</a>
+                                <a href="{{ path("formation_suppression",{"id":formation.id}) }}" class="footer-btn blu-btn" title="">Delete Now</a>
+                                <button id="checkout-button">checkout</button></div>
+                        </div>
+                    </div>
+                </div>
+				
+            </div>
+        </section>
+    <script src="{{ asset('https://js.stripe.com/v3/') }}"></script>
+    <script >
+        // Create an instance of the Stripe object with your publishable API key
+        var stripe = Stripe('pk_test_51IXnu2Ia1QXbZEIfyCoOFNT2VbNQJPzAD0xefDnYjvSCH2bmMAuBHXwtkHNWQlRfNr0MnApEvewzfR11UCHoVmow00hBvzmcdk');
+        var checkoutButton = document.getElementById('checkout-button');
+
+        checkoutButton.addEventListener('click', function() {
+            // Create a new Checkout Session using the server-side endpoint you
+            // created in step 3.
+            fetch('/formation/create-checkout-session/{{ formation.id }}', {
+                method: 'POST',
+            })
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(session) {
+                    return stripe.redirectToCheckout({ sessionId: session.id });
+                })
+                .then(function(result) {
+                    // If `redirectToCheckout` fails due to a browser or network
+                    // error, you should display the localized error message to your
+                    // customer using `error.message`.
+                    if (result.error) {
+                        alert(result.error.message);
+                    }
+                })
+                .catch(function(error) {
+                    console.error('Error:', error);
+                });
+        });
+
+    </script>
+
+ {% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'admin/base.html.twig' %}
+{% block nav %}
+    {% include 'admin/include/navbar.html.twig' %}
+{% endblock %}
+{% block sidebar %}
+    {% include 'admin/include/sidebar.html.twig' %}
+{% endblock %}
+
+
+{% block title %}Edit Participant{% endblock %}
+
+{% block body %}
+    <h1>Edit Participant</h1>
+
+    {{ include('admin/participant/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('participant_index_backend') }}">back to list</a>
+
+    {{ include('admin/participant/_delete_form.html.twig') }}
+{% endblock %}

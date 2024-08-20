@@ -1,0 +1,243 @@
+{% extends 'base.html.twig' %}
+      {% block nav %}
+
+		  {% include 'Inc/nav2.html.twig' %}
+
+	  {% endblock %}
+
+
+{% block body %}
+	<!-- End Navigation -->
+	<div class="clearfix"></div>
+
+	<!-- Title Header Start -->
+	<section class="inner-header-title" style="background-image:url(assets/img/banner-10.jpg);">
+		<div class="container">
+			<h1>Liste Formations</h1>
+		</div>
+	</section>
+	<div class="clearfix"></div>
+					
+
+
+
+	<!-- Member list start -->
+	<section class="member-card gray">
+		<div class="container">
+
+			<!-- search filter -->
+			<div class="row">
+				<div class="col-md-12 col-sm-12">
+					<div class="search-filter">
+
+						<div class="col-md-4 col-sm-5">
+							<div class="filter-form">
+								<div class="input-group">
+									<form class="w-search">
+										<div class="sidebar-search">
+											<div class="input-group custom-search-form">
+												<input type="text" id="search" class="form-control" placeholder="Search">
+											</div>
+											<!-- /input-group -->
+										</div>
+										<ul class="nav" id="side-menu">
+											<li>
+												<a href="#"><span class="fa arrow"></span></a>
+												<ul style="background-color: #0b0b0b" class="nav " id="entitiesNav">
+												</ul>
+											</li>
+										</ul>
+									</form>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-8 col-sm-7">
+							<div class="short-by pull-right">
+								Short By
+								<div class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Short By Date</a></li>
+										<li><a href="#">Short By Views</a></li>
+										<li><a href="#">Short By Popular</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+					<!-- Freelancers Start -->
+					<div class="row" id="all"><!-- Single Freelancer -->
+					{% include 'formation/ajax.html.twig' %}
+						<!-- Single Freelancer -->
+
+						<div class="col-md-12 col-sm-12">
+							<div class="text-center">
+
+								<div class="btn btn-primary">{{ knp_pagination_render(formations) }}</div>
+							</div>
+						</div>
+						
+					</div>
+			        <div class="row" id="search">
+					</div>
+				</div>
+			</section>
+			<!-- Accordion Design End -->
+
+			<!-- Sign Up Window Code -->
+			<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="tab" role="tabpanel">
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" class="active"><a href="#login" role="tab" data-toggle="tab">Sign In</a></li>
+								<li role="presentation"><a href="#register" role="tab" data-toggle="tab">Sign Up</a></li>
+							</ul>
+							<!-- Tab panes -->
+							<div class="tab-content" id="myModalLabel2">
+								<div role="tabpanel" class="tab-pane fade in active" id="login">
+									<img src="assets/img/logo.png" class="img-responsive" alt="" />
+									<div class="subscribe wow fadeInUp">
+										<form class="form-inline" method="post">
+											<div class="col-sm-12">
+												<div class="form-group">
+													<input type="email"  name="email" class="form-control" placeholder="Username" required="">
+													<input type="password" name="password" class="form-control"  placeholder="Password" required="">
+													<div class="center">
+													<button type="submit" id="login-btn" class="submit-btn"> Login </button>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+
+								<div role="tabpanel" class="tab-pane fade" id="register">
+								<img src="assets/img/logo.png" class="img-responsive" alt="" />
+									<form class="form-inline" method="post">
+											<div class="col-sm-12">
+												<div class="form-group">
+													<input type="text"  name="email" class="form-control" placeholder="Your Name" required="">
+													<input type="email"  name="email" class="form-control" placeholder="Your Email" required="">
+													<input type="email"  name="email" class="form-control" placeholder="Username" required="">
+													<input type="password" name="password" class="form-control"  placeholder="Password" required="">
+													<div class="center">
+													<button type="submit" id="subscribe" class="submit-btn"> Create Account </button>
+													</div>
+												</div>
+											</div>
+										</form>
+								</div>
+							</div>
+							</div>
+						</div>
+						</div>
+				</div>
+			</div>
+			<!-- End Sign Up Window -->
+
+{% endblock %}
+
+{%  block javascripts %}
+
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script>
+		function onClickBtnLike(event){
+			event.preventDefault();
+
+			const url= this.href;
+			const spanCount =this.querySelector('span.js-likes');
+			const icone =this.querySelector('i');
+
+			axios.get(url).then(function (response){
+				spanCount.textContent=response.data.likes;
+				if (icone.classList.contains('fas')) {
+					icone.classList.replace('fas', 'far');
+				}
+				else{
+					icone.classList.replace('far','fas');
+				}
+			}).catch(function (error){
+				if (error.response.status=== 403){
+					window.alert("vous ne pouvez pas liker un article si vous n'êtes pas connecté")
+				}
+
+			});
+		}
+		document.querySelectorAll('a.js-like').forEach(function (link){
+			link.addEventListener('click',onClickBtnLike);
+		})
+
+
+
+	</script>
+	<script>
+
+		function onClickBtnDislike(event){
+			event.preventDefault();
+
+			const url= this.href;
+			const spanCount =this.querySelector('span.js-dislikes');
+			const icone =this.querySelector('i');
+
+			axios.get(url).then(function (response){
+				spanCount.textContent=response.data.dislikes;
+				if (icone.classList.contains('fas')) {
+					icone.classList.replace('fas', 'far');
+				}
+				else{
+					icone.classList.replace('far','fas');
+				}
+			}).catch(function (error){
+				if (error.response.status=== 403){
+					window.alert("vous ne pouvez pas liker un article si vous n'êtes pas connecté")
+				}
+
+			});
+		}
+		document.querySelectorAll('a.js-dislike').forEach(function (link){
+			link.addEventListener('click',onClickBtnDislike);
+		})
+	</script>
+	<script src="{{ asset('assets/js/jquery.js') }}"></script>
+	<script src="{{ asset('https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')}}"></script>
+	<script>
+		$( document ).ready(function() {
+			var currentRequest = null;
+			$("#search").keyup(function(e){
+				/* La variable value va prendre la valeur insérer dans le champ de texte
+                afin d’effectuer la recherche */
+				var value = $(this).val();
+				if(currentRequest != null) {
+					currentRequest.abort();
+				}
+
+				/* Ajax est lancé lors du remplissage du champ texte dont l’id est
+                « search » pour faire la recherche */
+				currentRequest = $.ajax({
+
+					url : "{{ path('ajaxsearch') }}",
+					type : 'GET',
+					data: {
+						'searchValue' : value
+					},
+
+					success : function(retour)
+					{
+						$('#all').html(retour);
+
+					},
+				});
+				return false;
+			});
+		});
+	</script>
+
+{% endblock %}
